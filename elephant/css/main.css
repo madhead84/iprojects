@@ -1,0 +1,230 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    background: #e7e5c8;
+    width: 700px;
+    margin: auto;
+    overflow-x: hidden;
+
+}
+
+.header {
+    display: inline-block;
+    height: 88px;
+}
+
+.header img{
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+
+#phone{
+    background: url("../images/phone.png") no-repeat;
+    font: 14px "Times New Roman", Times, serif;
+    color: #f1f0e0;
+    font-weight: bolder;
+    width: 274px;
+    height: 88px;
+    position: relative;
+    left: 360px;
+}
+
+h2 span p {
+    position: absolute;
+    left: 10px;
+}
+
+hr {
+    border: 0;
+    background-color: #c0bd9a;
+    color: #c0bd9a;
+    margin-top: 20px;
+    height: 1px;
+
+}
+
+.ho {
+    float: left;
+    margin: 50px 45px 0px 0px;
+}
+
+.main_text {
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #969473;
+}
+
+.main_text h3 {
+    font: 14px "Times New Roman", Times, serif;
+    color: #6a684d;
+    padding-left: 430px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+.main_text p {
+    margin-bottom: 15px;
+}
+
+.letter {
+    color: #90aa1f;
+}
+
+.inve {
+    color: #869a28;
+    text-decoration: underline;
+}
+
+.down_hr {
+    border: 0;
+    margin-top: 125px;
+    background-color: #c0bd9a;
+    color: #c0bd9a;
+    height: 1px;
+}
+
+.galery{
+    padding-left: 15px;
+    padding-top: 10px;
+    position: absolute;
+    width: 685px;
+    height: 185px;
+    background-color: #dedbbb;
+}
+.galery h4{
+    font: 14px "Times New Roman", Times, serif;
+    color: #6e6b3d;
+    font-weight: bolder;
+}
+
+
+.galery img{
+
+    border: 4px solid #b7b192;
+    border-right: 18px solid #b7b192;
+    border-radius: 4px;
+
+}
+
+.offer{
+    border-left: 2px solid #c0bd9a;
+    border-right: 2px solid #c0bd9a;
+    padding-left: 15px;
+    padding-top: 10px;
+    position: absolute;
+    width: 230px;
+    height: 180px;
+    margin-left: 245px;
+    font: 11px Tahoma, Arial, sans-serif;
+}
+
+.offer img{
+    border: 4px solid #b7b192;
+    border-radius: 4px;
+}
+.offer h4{
+    font: 14px "Times New Roman", Times, serif;
+    color: #6e6b3d;
+    font-weight: bolder;
+}
+.offer p{
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #6a684d;
+}
+.ipsum{
+    color: #6a6847;
+    font-weight: bolder;
+}
+.offer span{
+    font-weight: bolder;
+
+}
+.services{
+    font: 11px Tahoma, Arial, sans-serif;
+    position: relative;
+    width: 245px;
+    height: 180px;
+    margin-left: 515px;
+}
+
+.services span{
+    font: 14px "Times New Roman", Times, serif;
+    color: #6e6b3d;
+    font-weight: bolder;
+    padding-left: 515px;
+}
+
+#letter {
+    color: #90aa1f;
+}
+
+.services ul{
+    padding-left: 525px;
+    text-decoration:underline;
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #6a6847;
+}
+
+
+
+.services h5{
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #6e6b3d;
+    padding-left: 505px;
+}
+.contacts{
+    padding-top: 185px;
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #6a6847;
+    text-decoration:underline;
+}
+/*
+    Цвета и семейство шрифтов используемых на сайте
+    Удалить в конце разработки
+*/
+#delete-after-development {
+
+
+
+    color: #f9f9f2;
+    color: #f5f7f9;
+
+    color: #727056;
+    color: #888665;
+    ;
+
+
+
+}
