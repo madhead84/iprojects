@@ -44,13 +44,11 @@ body {
 }
 
 .header img{
-    display: inline-block;
     padding-left: 20px;
     padding-top: 25px;
 }
 
-
-#phone{
+.phone{
     background: url("../images/phone.png") no-repeat;
     font: 14px "Times New Roman", Times, serif;
     color: #f1f0e0;
@@ -58,8 +56,15 @@ body {
     width: 274px;
     height: 88px;
     position: relative;
-    left: 360px;
+    left: 460px;
+    top: -60px;
+    padding-top: 25px;
+    padding-right: 210px;
+    padding-left: 110px;
+
 }
+
+
 
 h2 span p {
     position: absolute;
