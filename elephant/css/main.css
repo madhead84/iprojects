@@ -52,22 +52,19 @@ body {
     background: url("../images/phone.png") no-repeat;
     font: 14px "Times New Roman", Times, serif;
     color: #f1f0e0;
-    font-weight: bolder;
+    font-weight: bold;
     width: 274px;
     height: 88px;
     position: relative;
     left: 460px;
     top: -60px;
-    padding-top: 25px;
-    padding-right: 210px;
+    padding-top: 20px;
     padding-left: 110px;
 
 }
 
-
-
-h2 span p {
-    position: absolute;
+.phone p {
+    position: relative;
     left: 10px;
 }
 
@@ -75,7 +72,7 @@ hr {
     border: 0;
     background-color: #c0bd9a;
     color: #c0bd9a;
-    margin-top: 20px;
+    margin-top: 0px;
     height: 1px;
 
 }
