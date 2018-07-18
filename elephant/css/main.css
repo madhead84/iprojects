@@ -20,8 +20,8 @@ body {
 
 .phone {
     background: url(../images/phone.png) no-repeat;
-    width: 160px;
-    height: 66px;
+    width: 165px;
+    height: 70px;
     position: absolute;
     padding-top: 20px;
     padding-left: 110px;
@@ -52,6 +52,7 @@ body {
 .main_text {
     font: 11px Tahoma, Arial, sans-serif;
     color: #969473;
+
 }
 
 .main_text h3 {
@@ -76,18 +77,11 @@ body {
     text-decoration: underline;
 }
 
-.down_hr {
-    border: 0;
-    margin-top: 125px;
-    background-color: #c0bd9a;
-    color: #c0bd9a;
-    height: 1px;
-}
-
 .galery{
+    clear: both;
+    border-top: 1px solid #c0bd9a;
     padding-left: 15px;
     padding-top: 10px;
-    position: absolute;
     width: 685px;
     height: 185px;
     background-color: #dedbbb;
