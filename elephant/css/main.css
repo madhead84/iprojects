@@ -8,7 +8,7 @@ body {
 
 .header {
     border-bottom: 1px solid #c0bd9a;
-    width: 730px;
+    width: 700px;
     height: 83px;
 }
 
@@ -22,11 +22,12 @@ body {
     background: url(../images/phone.png) no-repeat;
     width: 160px;
     height: 66px;
-    position: relative;
+    position: absolute;
     padding-top: 20px;
     padding-left: 110px;
     background-size: contain;
-    float: right;
+    right: 380px;
+    top: 0px;
 
 }
 
