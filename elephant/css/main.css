@@ -10,6 +10,7 @@ body {
     border-bottom: 1px solid #c0bd9a;
     width: 700px;
     height: 83px;
+    position: relative;
 }
 
 .header img{
@@ -26,8 +27,8 @@ body {
     padding-top: 20px;
     padding-left: 110px;
     background-size: contain;
-    right: 380px;
-    top: 0px;
+    right: -30px;
+    display: inline-block;
 
 }
 
@@ -45,23 +46,24 @@ body {
 }
 
 .ho {
-    float: left;
-    margin: 50px 45px 0px 0px;
+    display: inline-block;
+    width: 49%;
 }
 
 .main_text {
     font: 11px Tahoma, Arial, sans-serif;
     color: #969473;
+    display: inline-block;
+    width: 49%;
 
 }
 
 .main_text h3 {
     font: 14px "Times New Roman", Times, serif;
     color: #6a684d;
-    padding-left: 430px;
-    padding-top: 15px;
     margin-bottom: 15px;
     font-weight: bolder;
+    padding-left: 10px;
 }
 
 .main_text p {
@@ -77,14 +79,20 @@ body {
     text-decoration: underline;
 }
 
+.footer{
+    width: 100%;
+    position: relative;
+    background-color: #dedbbb;
+}
 .galery{
+    display: inline-block;
     clear: both;
     border-top: 1px solid #c0bd9a;
     padding-left: 15px;
     padding-top: 10px;
-    width: 685px;
+    width: 30%;
     height: 185px;
-    background-color: #dedbbb;
+
 }
 .galery h4{
     font: 14px "Times New Roman", Times, serif;
@@ -102,14 +110,13 @@ body {
 }
 
 .offer{
+    display: inline-block;
     border-left: 2px solid #c0bd9a;
     border-right: 2px solid #c0bd9a;
     padding-left: 15px;
     padding-top: 10px;
-    position: absolute;
-    width: 230px;
+    width: 30%;
     height: 180px;
-    margin-left: 245px;
     font: 11px Tahoma, Arial, sans-serif;
 }
 
@@ -136,17 +143,16 @@ body {
 }
 .services{
     font: 11px Tahoma, Arial, sans-serif;
-    position: relative;
-    width: 245px;
+    display: inline-block;
+    width: 30%;
     height: 180px;
-    margin-left: 515px;
+
 }
 
 .services span{
     font: 14px "Times New Roman", Times, serif;
     color: #6e6b3d;
     font-weight: bolder;
-    padding-left: 515px;
 }
 
 #letter {
@@ -154,21 +160,18 @@ body {
 }
 
 .services ul{
-    padding-left: 525px;
     text-decoration:underline;
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a6847;
 }
 
-
-
 .services h5{
     font: 11px Tahoma, Arial, sans-serif;
     color: #6e6b3d;
-    padding-left: 505px;
 }
+
 .contacts{
-    padding-top: 185px;
+    padding-top: 30px;
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a6847;
     text-decoration:underline;
