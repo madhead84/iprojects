@@ -93,13 +93,13 @@ body {
     padding-left: 15px;
 }
 
-.footer-containers h4{
+.footer-containers h4 {
     font: 14px "Times New Roman", Times, serif;
     color: #6e6b3d;
     font-weight: bolder;
 }
 
-.gallery{
+.gallery {
     width: 220px;
 }
 
@@ -120,7 +120,6 @@ body {
     border: 4px solid #b7b192;
     border-radius: 4px;
 }
-
 
 .offer p {
     font: 11px Tahoma, Arial, sans-serif;
@@ -147,16 +146,18 @@ body {
 #letter {
     color: #90aa1f;
 }
-.text_container{
+
+.text_container {
     width: 135px;
 }
+
 .services ul {
     text-decoration: underline;
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a6847;
 }
 
-.green_underline{
+.green_underline {
     color: #90aa1f;
     text-decoration: underline;
 }
@@ -166,16 +167,17 @@ body {
     color: #6e6b3d;
 }
 
-.last_line{
+.last_line {
     width: 700px;
     position: relative;
 }
 
-.last_line img{
+.last_line img {
     padding-left: 20px;
     padding-top: 25px;
     display: inline-block;
 }
+
 .contacts {
     vertical-align: top;
     background: url(../images/map.jpg) no-repeat;
@@ -187,7 +189,7 @@ body {
     right: 10px;
 }
 
-.contacts h3{
+.contacts h3 {
     font: 14px "Times New Roman", Times, serif;
     color: #6a684d;
     margin-bottom: 15px;
@@ -195,7 +197,7 @@ body {
     padding-left: 10px;
 }
 
-.contacts p{
+.contacts p {
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a684d;
 }
