@@ -7,13 +7,13 @@ body {
 }
 
 .header {
-    border-bottom: 1px solid #c0bd9a;
     width: 700px;
     height: 83px;
     position: relative;
+    border-bottom: 1px solid #c0bd9a;
 }
 
-.header img{
+.header img {
     padding-left: 20px;
     padding-top: 25px;
     display: inline-block;
@@ -32,12 +32,11 @@ body {
 
 }
 
-.text{
+.text {
     font: 14px "Times New Roman", Times, serif;
     color: #f1f0e0;
     font-weight: bold;
 }
-
 
 .phone p {
     position: relative;
@@ -45,17 +44,21 @@ body {
     margin: 0px;
 }
 
+.body_text {
+    border-bottom: 1px solid #c0bd9a;
+    padding-bottom: 20px;
+    margin-bottom: 2px;
+}
+
 .ho {
     display: inline-block;
-    width: 49%;
 }
 
 .main_text {
     font: 11px Tahoma, Arial, sans-serif;
     color: #969473;
     display: inline-block;
-    width: 49%;
-
+    width: 50%;
 }
 
 .main_text h3 {
@@ -79,118 +82,134 @@ body {
     text-decoration: underline;
 }
 
-.footer{
+.footer {
     width: 100%;
     position: relative;
     background-color: #dedbbb;
 }
-.galery{
-    display: inline-block;
-    clear: both;
-    border-top: 1px solid #c0bd9a;
-    padding-left: 15px;
-    padding-top: 10px;
-    width: 30%;
-    height: 185px;
 
+.footer-containers {
+    display: inline-block;
+    padding-left: 15px;
 }
-.galery h4{
+
+.footer-containers h4{
     font: 14px "Times New Roman", Times, serif;
     color: #6e6b3d;
     font-weight: bolder;
 }
 
+.gallery{
+    width: 220px;
+}
 
-.galery img{
-
+.gallery img {
     border: 4px solid #b7b192;
     border-right: 18px solid #b7b192;
     border-radius: 4px;
-
 }
 
-.offer{
-    display: inline-block;
-    border-left: 2px solid #c0bd9a;
-    border-right: 2px solid #c0bd9a;
-    padding-left: 15px;
-    padding-top: 10px;
-    width: 30%;
-    height: 180px;
-    font: 11px Tahoma, Arial, sans-serif;
+.offer {
+    width: 220px;
+    border-right: 1px solid #c0bd9a;
+    border-left: 1px solid #c0bd9a;
+    padding-right: 5px;
 }
 
-.offer img{
+.offer img {
     border: 4px solid #b7b192;
     border-radius: 4px;
 }
-.offer h4{
-    font: 14px "Times New Roman", Times, serif;
-    color: #6e6b3d;
-    font-weight: bolder;
-}
-.offer p{
+
+
+.offer p {
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a684d;
 }
-.ipsum{
+
+.ipsum {
     color: #6a6847;
     font-weight: bolder;
 }
-.offer span{
-    font-weight: bolder;
 
+.offer span {
+    font-weight: bolder;
 }
-.services{
+
+.services {
+    background: url(../images/elephant.jpg) no-repeat;
+    background-position: right, bottom;
+    vertical-align: top;
+    width: 200px;
     font: 11px Tahoma, Arial, sans-serif;
-    display: inline-block;
-    width: 30%;
-    height: 180px;
-
-}
-
-.services span{
-    font: 14px "Times New Roman", Times, serif;
-    color: #6e6b3d;
-    font-weight: bolder;
 }
 
 #letter {
     color: #90aa1f;
 }
-
-.services ul{
-    text-decoration:underline;
+.text_container{
+    width: 135px;
+}
+.services ul {
+    text-decoration: underline;
     font: 11px Tahoma, Arial, sans-serif;
     color: #6a6847;
 }
 
-.services h5{
+.green_underline{
+    color: #90aa1f;
+    text-decoration: underline;
+}
+
+.services h5 {
     font: 11px Tahoma, Arial, sans-serif;
     color: #6e6b3d;
 }
 
-.contacts{
-    padding-top: 30px;
-    font: 11px Tahoma, Arial, sans-serif;
-    color: #6a6847;
-    text-decoration:underline;
+.last_line{
+    width: 700px;
+    position: relative;
 }
+
+.last_line img{
+    padding-left: 20px;
+    padding-top: 25px;
+    display: inline-block;
+}
+.contacts {
+    vertical-align: top;
+    background: url(../images/map.jpg) no-repeat;
+    width: 195px;
+    position: absolute;
+    padding-left: 110px;
+    background-size: contain;
+    display: inline-block;
+    right: 10px;
+}
+
+.contacts h3{
+    font: 14px "Times New Roman", Times, serif;
+    color: #6a684d;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.contacts p{
+    font: 11px Tahoma, Arial, sans-serif;
+    color: #6a684d;
+}
+
 /*
     Цвета и семейство шрифтов используемых на сайте
     Удалить в конце разработки
 */
 #delete-after-development {
 
-
-
     color: #f9f9f2;
     color: #f5f7f9;
 
     color: #727056;
-    color: #888665;
-    ;
-
-
+    color: #888665;;
 
 }
