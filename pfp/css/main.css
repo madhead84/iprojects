@@ -1,0 +1,12 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background: url(../images/1.gif);
+}
+
+/*
+    Для контента используется
+    font-family: Tahoma, Arial, sans-serif;
+
+    Для меню выше и ниже контента используется
+    font-family: "Times New Roman", Times, serif;
+*/
