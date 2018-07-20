@@ -7,7 +7,6 @@ body {
 }
 
 .header {
-    width: 700px;
     height: 83px;
     position: relative;
     border-bottom: 1px solid #c0bd9a;
@@ -16,7 +15,6 @@ body {
 .header img {
     padding-left: 20px;
     padding-top: 25px;
-    display: inline-block;
 }
 
 .phone {
@@ -47,11 +45,8 @@ body {
 .body_text {
     border-bottom: 1px solid #c0bd9a;
     padding-bottom: 20px;
+    margin-top: 10px;
     margin-bottom: 2px;
-}
-
-.ho {
-    display: inline-block;
 }
 
 .main_text {
@@ -59,18 +54,14 @@ body {
     color: #969473;
     display: inline-block;
     width: 50%;
+    vertical-align: top;
 }
 
 .main_text h3 {
     font: 14px "Times New Roman", Times, serif;
     color: #6a684d;
-    margin-bottom: 15px;
     font-weight: bolder;
     padding-left: 10px;
-}
-
-.main_text p {
-    margin-bottom: 15px;
 }
 
 .letter {
@@ -140,7 +131,6 @@ body {
     background-position: right, bottom;
     vertical-align: top;
     width: 200px;
-    font: 11px Tahoma, Arial, sans-serif;
 }
 
 #letter {
@@ -168,14 +158,12 @@ body {
 }
 
 .last_line {
-    width: 700px;
     position: relative;
 }
 
 .last_line img {
     padding-left: 20px;
     padding-top: 25px;
-    display: inline-block;
 }
 
 .contacts {
@@ -192,7 +180,6 @@ body {
 .contacts h3 {
     font: 14px "Times New Roman", Times, serif;
     color: #6a684d;
-    margin-bottom: 15px;
     font-weight: bolder;
     padding-left: 10px;
 }
