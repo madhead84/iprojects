@@ -1,8 +1,34 @@
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #fff;
     background: url(../images/1.gif);
+    margin: 0;
 }
 
+.top_bar {
+    background: url(../images/3.gif) no-repeat;
+    height: 30px;
+    background-color: #000;
+    font-size: 8px;
+
+}
+
+.top_bar span {
+    float: right;
+}
+
+.top_bar select{
+    margin: 5px 20px;
+}
+
+.body_page{
+    width: 720px;
+    margin: auto;
+}
+
+.order_basket{
+    float: right;
+}
 /*
     Для контента используется
     font-family: Tahoma, Arial, sans-serif;
