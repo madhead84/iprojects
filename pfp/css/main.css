@@ -8,31 +8,115 @@ body {
 .top_bar {
     background: url(../images/3.gif) no-repeat;
     height: 30px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 10px;
     background-color: #000;
-    font-size: 8px;
-
 }
 
 .top_bar span {
     float: right;
 }
 
-.top_bar select{
+.top_bar select {
     margin: 5px 20px;
 }
 
-.body_page{
+.body_page {
     width: 720px;
     margin: auto;
 }
 
-.order_basket{
+.order_basket {
     float: right;
+    padding: 5px 0;
+    font-size: 10px;
 }
-/*
-    Для контента используется
-    font-family: Tahoma, Arial, sans-serif;
 
-    Для меню выше и ниже контента используется
+.black_background_part {
     font-family: "Times New Roman", Times, serif;
-*/
+    background-color: #000;
+    border: 1px solid #a36917;
+    padding: 0 20px;
+    height: 700px;
+}
+
+.site_menu {
+    margin-top: -2px;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #c59e52;
+}
+.site_menu span{
+    padding: 0 35px 0 35px;
+}
+
+.site_menu > a:link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.site_menu > a:visited {
+    text-decoration: none;
+    color: #c59e52;
+}
+
+.body_text{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    margin-top: 0;
+    font-size: 11px;
+}
+
+.site_menu_bottom{
+    padding-top: 450px;
+    color: #c59e52;
+    font-size: 12px;
+    text-align: center;
+}
+
+.site_menu_bottom > a:visited {
+    text-decoration: none;
+    color: #c59e52;
+}
+
+.site_menu_bottom > a:link {
+    text-decoration: none;
+    color: #c59e52;
+}
+
+.site_menu_bottom > a:hover {
+    color: #fff;
+}
+
+.bottom_bar{
+    padding: 0 20px;
+    height: 30px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 10px;
+    background-color: #000;
+}
+
+.bottom_bar span{
+    padding-top: 5px;
+}
+
+.bottom_bar a{
+    float: right;
+    padding: 5px;
+}
+
+.bottom_bar a:link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.bottom_bar a:hover {
+    color: #fff;
+}
+
+.bottom_bar > a:visited {
+    text-decoration: none;
+    color: #fff;
+}
