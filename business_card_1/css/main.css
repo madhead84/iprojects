@@ -1,4 +1,16 @@
 body {
     color: #424242;
     font: 14px Arial, Helvetica, sans-serif;
+    width: 980px;
+    margin: auto;
+}
+
+.site_menu{
+    height: 120px;
+    background: url("../images/logo.png") no-repeat;
+    padding-left: 555px;
+}
+
+.site_menu a{
+    width: 33%;
 }
