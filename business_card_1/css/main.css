@@ -51,8 +51,8 @@ body {
 }
 
 .background_img{
-    width: 145px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     background: url("../images/100_2.gif") no-repeat, url("../images/shadow.png") no-repeat;
     margin-left: 670px;
@@ -72,4 +72,53 @@ body {
 
 .top_text img{
     display: inline-block;
+}
+
+.main_text{
+    width: 980px;
+    margin: auto;
+}
+
+.main_text span{
+    display: block;
+    border-left: #efefef 10px solid;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    width: 380px;
+    margin-bottom: 20px;
+}
+
+.p1_img{
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 420px;
+    background: url("../images/p1.jpg") no-repeat;
+
+
+}
+
+.p2_img{
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    margin-left: 420px;
+    background: url("../images/p2.jpg") no-repeat;
+}
+
+.copyright{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 38px;
+    background-color: #343434;
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+}
+
+form{
+    display: block;
 }
