@@ -1,16 +1,75 @@
 body {
     color: #424242;
     font: 14px Arial, Helvetica, sans-serif;
+    margin: 0;
+
+}
+
+.site_menu{
+    width: 980px;
+    margin: auto;
+    height: 140px;
+}
+
+.buttons_menu{
+    display: inline-block;
+    width: 138px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    padding-top: 56px;
+}
+
+.about_us{
+    margin-left: 180px;
+    border-top: #ff7800 16px solid;
+}
+
+.contact_us{
+    border-top: #1e3436 16px solid;
+}
+
+.offers{
+    border-top: #319aa3 16px solid;
+}
+
+.buttons_menu :active{
+    border-top: #d9d9d9 16px solid;
+    background-color: #d9d9d9;
+}
+
+
+.top_text{
+    height: 130px;
+    color: #fff;
+    background-color: #3f3f3f;
+}
+
+.body_text{
     width: 980px;
     margin: auto;
 }
 
-.site_menu{
-    height: 120px;
-    background: url("../images/logo.png") no-repeat;
-    padding-left: 555px;
+.background_img{
+    width: 145px;
+    height: 140px;
+    position: absolute;
+    background: url("../images/100_2.gif") no-repeat, url("../images/shadow.png") no-repeat;
+    margin-left: 670px;
 }
 
-.site_menu a{
-    width: 33%;
+.body_text h1{
+    padding-top: 10px;
+}
+
+.body_text span{
+    display: inline-block;
+    width: 550px;
+    border-left: #646464 10px solid;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.top_text img{
+    display: inline-block;
 }
