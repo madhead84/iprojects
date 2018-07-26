@@ -45,7 +45,7 @@ body {
     background-color: #3f3f3f;
 }
 
-.body_text{
+.body_text, .bottom_part, .main_text{
     width: 980px;
     margin: auto;
 }
@@ -72,11 +72,6 @@ body {
 
 .top_text img{
     display: inline-block;
-}
-
-.main_text{
-    width: 980px;
-    margin: auto;
 }
 
 .main_text span{
@@ -119,6 +114,67 @@ body {
     padding-top: 12px;
 }
 
-form{
-    display: block;
+.contact_us_form{
+    width: 980px;
+    margin: auto;
 }
+
+.contact_us_form input[type="text"], .contact_us_form input[type="email"] {
+    width: 300px;
+    height: 16px;
+    margin: 10px;
+}
+
+.inputs input[type="button"]{
+    margin-left: 80px;
+    width: 100px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.inputs textarea{
+    margin-left: 10px;
+}
+
+.column{
+    width: 30%;
+    height: 190px;
+    display: inline-block;
+    margin-top: 40px;
+    border-left: #efefef 10px solid;
+    padding-left: 20px;
+    vertical-align: top;
+    background: url("../images/dot.jpg") no-repeat;
+    background-position-x: 10px;
+
+}
+
+.column h2{
+    padding-left: 10px;
+}
+
+ul{
+    padding-left: 0;
+}
+li {
+    list-style-type: none;
+}
+
+.contact_us_form{
+    margin-top: 20px;
+}
+
+label{
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+
+.message{
+    vertical-align: top;
+}
+
+
+
+
+
