@@ -3,7 +3,6 @@ body {
     width: 700px;
     margin: auto;
     overflow-x: hidden;
-
 }
 
 .header {
@@ -27,7 +26,6 @@ body {
     background-size: contain;
     right: -30px;
     display: inline-block;
-
 }
 
 .text {
@@ -39,7 +37,7 @@ body {
 .phone p {
     position: relative;
     left: 10px;
-    margin: 0px;
+    margin: 0;
 }
 
 .body_text {
