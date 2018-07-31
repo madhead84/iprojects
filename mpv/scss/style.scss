@@ -1,5 +1,124 @@
-body{
-    background-color: #2a2e34;
-    color: red;
+body {
+    color: #fff;
+    margin: auto;
+    background: linear-gradient(#303239, #191a1d 30px, #000, #000 205px, #191a1d, #303339 285px);
+}
 
+.header {
+    width: 1014px;
+    height: 285px;
+    margin: auto;
+    background: url("../images/car.png") no-repeat;
+    background-position-x: 430px;
+    background-position-y: 15px;
+
+    img {
+        margin-left: 90px;
+        padding-top: 85px;
+    }
+
+    h2 {
+        margin-left: 90px;
+        font: 18px Franklin Gothic Book, Arial ;
+    }
+}
+
+.site_menu {
+    width: 1014px;
+    height: 38px;
+    margin: auto;
+    background: #fd6003;
+    border-bottom: #000 25px solid;
+
+    a {
+        display: inline-block;
+        margin-left: 22px;
+        height: 25px;
+        padding: 10px 35px 0;
+        text-decoration: none;
+        color: #23262b;
+        font: 16px Arial;
+
+
+        font-weight: bold;
+
+        &:active {
+            background: #303339;
+            color: #fd6003;
+            border-radius: 0 0 9px 9px;
+            border-color: #fd6003;;
+        }
+    }
+}
+
+.main_text {
+    width: 1014px;
+    margin: 0 auto;
+    background: #2f3239 ;
+}
+
+.home_page_columns {
+    width: 28%;
+    display: inline-block;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-left: #fff 1px dashed;
+    vertical-align: text-top;
+    height: 100%;
+
+
+    h2 {
+        color: #fd6703;
+        font: 18px Arial;
+        font-weight: bold;
+    }
+
+    p {
+        color: #ffffff;
+        font: 12px Tahoma;
+        padding-right: 20px;
+    }
+
+    li {
+        color: #f4802e;
+    }
+
+    span {
+        font: 12px Tahoma;
+        font-weight: bold;
+        color: #d6d5d5;
+    }
+
+    img {
+        border: 6px solid #ffffff;
+
+    }
+}
+
+.gallery_company_column {
+
+    border-right: #fff 1px dashed;;
+}
+
+.footer {
+    width: 1014px;
+    margin: auto;
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 0 0 20px;
+    border-bottom: #fd6a03 10px solid;
+
+    h2 {
+        color: #fd5803;
+        font: 18px Arial;
+    }
+
+    p {
+        width: 255px;
+        color: #d6d5d5;
+        font: 12px Tahoma;
+        padding-bottom: 20px;
+    }
 }
