@@ -22,6 +22,19 @@ body {
     position: relative;
 }
 
+.site_menu{
+    display: inline-block;
+    float: right;
+    color: #deaf89;
+    text-decoration: none;
+
+    a {
+        font-size: 10px;
+        color: #deaf89;
+        text-decoration: none;
+    }
+}
+
 /* ---------------------------------------- Content */
 
 /*
