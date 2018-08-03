@@ -18,7 +18,7 @@ body {
     width: 950px;
     margin: 0 auto;
     min-height: 100%;
-    padding-bottom: 130px;
+    padding-bottom: 140px;
     position: relative;
 
     &:after {
@@ -30,8 +30,8 @@ body {
 
 .header {
     border-bottom: #6a5455 2px solid;
-    margin: 20px 0 30px;
-    padding-bottom: 20px;
+    padding: 20px 0 30px;
+    margin-bottom: 20px;
 }
 
 .site_menu {
@@ -202,13 +202,15 @@ body {
 }
 
 .footer {
-    padding-top: 20px;
     position: absolute;
     bottom: 0;
     width: 100%;
     border-top: 1px solid #6A5455;
     height: 120px;
-    vertical-align: text-top;
+
+    img{
+        margin-top: 20px;
+    }
 
     a {
         display: inline-block;
@@ -216,7 +218,7 @@ body {
         text-decoration: none;
         color: #ffffff;
         margin-left: 10px;
-        margin-top: 40px;
+        margin-top: 50px;
 
         &:hover {
             text-decoration: underline;
