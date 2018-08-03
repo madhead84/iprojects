@@ -18,7 +18,7 @@ body {
     width: 950px;
     margin: 0 auto;
     min-height: 100%;
-    padding-bottom: 120px;
+    padding-bottom: 130px;
     position: relative;
 
     &:after {
@@ -118,9 +118,10 @@ body {
 
 .right_content{
     display: inline-block;
-    width: 640px;
+    width: 660px;
     vertical-align: text-top;
     float: right;
+    margin-bottom: 20px;
 }
 
 .all_pages_main_content{
@@ -152,23 +153,74 @@ body {
     }
 }
 
+.main_information{
+    margin: 20px;
 
+    h2 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #74c4d9;
+    }
 
+    p {
+        font-size: 12px;
+        color: #decacb;
+        margin-top: 20px;
+        line-height: 150%;
+    }
 
-/* ---------------------------------------- Content */
+    ol{
+        font-size: 12px;
+        color: #decacb;
+        margin-top: 20px;
+        line-height: 150%;
+    }
 
-/*
-    Для голубых заголовков
+    h3 {
+        color: #ffffff;
+        display: inline-block;
+    }
 
-*/
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 12px;
+        float: right;
 
-/* ---------------------------------------- Footer */
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.logotips_images {
+    a {
+        float: left;
+        border: #3c312f 10px solid;
+        margin: 18px 0 0 18px;
+    }
+}
 
 .footer {
+    padding-top: 20px;
     position: absolute;
     bottom: 0;
     width: 100%;
     border-top: 1px solid #6A5455;
     height: 120px;
+    vertical-align: text-top;
+
+    a {
+        display: inline-block;
+        vertical-align: top;
+        text-decoration: none;
+        color: #ffffff;
+        margin-left: 10px;
+        margin-top: 40px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
