@@ -25,19 +25,55 @@ var objectWithTwoPrimitivesAndTwoCompositeDataType = {
         longJump: false,
         runSpeed: 30,
     }
-}
+};
 
-var firstArreyShopChecklist= [
+var firstArreyShopChecklist = [
     {eags:{quontety:30}},
     bread,
     {water:{botels:2}},
     {milk: {packages:1 }},
-    "kolbasa"]
+    "kolbasa"];
 
-var numbersArey = [2, 36, 18, 25, 16, 13, 7];
+var sasha = {
+    ege: 25,
+    height: 177,
+    profession: "Front end developer",
+    hobby: "Software engineering"
+};
+
+var tumbocka = {
+    color: "white",
+    height: 80,
+    width: 40,
+    depth: 50,
+    numberOfDrawers: 3,
+    lock: true
+};
+
+var pilesos = {
+    brand: "Philips",
+    power: "500W",
+    color: "green"
+};
+
+var phone = {
+    brand: "Apple",
+    screenResolution: "1200x800",
+    microUSB: false,
+    lightning: true,
+    powerBattery: "3000mAh"
+};
+
+var pterodactel = {
+    predator: true,
+    flyable: true,
+    population: 0
+};
+
+var numbersArray = [2, 36, 18, 25, 16, 13, 7];
 var i = 0;
-while (i<numbersArey.length){
-    console.log(numbersArey[i]*numbersArey[i]);
+while (i<numbersArray.length){
+    console.log(numbersArray[i]*numbersArray[i]);
     i++;
 }
 
@@ -46,7 +82,7 @@ function returnTheSecondElement() {
     return arreyThirdElement[2];
 }
 
-//modified previus task
+//modified previous task
 
 function retunNecessaryElementOfArrey(inputArray, necessaryElementOfArrey) {
     return inputArray[necessaryElementOfArrey-1];
@@ -57,7 +93,7 @@ var objectWithThreeProperties = {
     weight: 20,
     edge: 11
 
-}
+};
 
 objectWithThreeProperties.edge;
 
@@ -65,9 +101,9 @@ var a = [
     "dog",
     "eat",
     18,
-    36,
+    34,
     [0,
         [26,
             {y: "server", x: "client"}],
-        [26,16]
+        [72,12]
     ]];
