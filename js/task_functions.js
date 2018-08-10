@@ -1,43 +1,42 @@
-
-var getFirstValueOfArray = function (array) {
+var first  = function(array) {
     return array[0];
 };
 
-var  getLastValueOfArray = function (array) {
+var last = function(array) {
     return array[array.length-1];
 };
 
-var getMinValueOfArray = function (array) {
-    var minValueOfArray = array[0];
-    for (var i = 0; i<array.length; i++) {
-        if (minValueOfArray > array[i]) {
-            minValueOfArray = array[i];
-        }
-    }
-    return minValueOfArray
-};
-
-var getMaxValueOfArray = function (array) {
-    var maxValueOfArray = array[0];
-    for (var i = 0; i<array.length; i++) {
-        if (maxValueOfArray < array[i]) {
-            maxValueOfArray = array[i];
-        }
-    }
-    return maxValueOfArray;
-};
-
-var removeUndefinedFromArray = function (array) {
-    var arrayWithoutUndefined = [];
+var min = function(array) {
+    var min = array[0];
     for (var i = 0; i < array.length; i++) {
-        if (array[i] != undefined) {
-            arrayWithoutUndefined.push(array[i]);
+        if (array[i] < min) {
+            min = array[i];
         }
     }
-    return arrayWithoutUndefined;
+    return min;
 };
 
-var containsNumberInArray = function (array, value) {
+var max = function(array) {
+    var max = array[0];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+    return max;
+};
+
+var compact = function(array) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] !== undefined) {
+            result[result.length] = array[i];
+        }
+    }
+    return result;
+};
+
+var contains = function(array, value) {
     for (var i = 0; i < array.length; i++) {
         if (array[i] === value) {
             return true;
@@ -46,92 +45,61 @@ var containsNumberInArray = function (array, value) {
     return false;
 };
 
-var isUndefined = function (value) {
+var isUndefined = function(value) {
     if (value === undefined) {
         return true;
     }
     return false;
 };
 
-var arraySize = function (array) {
+var size = function(array) {
     return array.length;
 };
 
-var isNull = function (value) {
+var isNull = function(value) {
     if (value === null) {
         return true;
     }
     return false;
 };
 
-var isNull = function (value) {
-    if (value === null) {
+var isBoolean = function(value) {
+    if (value === true || value === false) {
         return true;
     }
     return false;
 };
 
-var isBoolean = function (value) {
-    if (typeof(value) === "boolean") {
-        return true;
-    }
-    return false;
-};
-
-var push = function (array, value) {
-    array[array.length] = value;
-    return array;
-};
-
-var without = function (array, value) {
-    var arrayWithoutValue = [];
+var without = function(array, value) {
+    var result = [];
     for (var i = 0; i < array.length; i++) {
-        if (array[i] != value) {
-            arrayWithoutValue.push(array[i]);
+        if (array[i] !== value) {
+            result.push(array[i]);
         }
     }
-    return arrayWithoutValue;
+    return result;
 };
 
 var reverse = function(array) {
-    var reverseArray = [];
-    for (var i = (array.length - 1); i >= 0; i--) {
-        reverseArray.push(array[i]);
+    var result = [];
+    for (var i = array.length - 1; i >= 0; i--) {
+        result.push(array[i]);
     }
-    return reverseArray;
+    return result;
 };
 
-var join = function (array, divider) {
-    var returnedString = '';
+var join = function(array, divider) {
+    var result = '';
     if (divider === undefined) {
-        divider = ",";
+        divider = ',';
     };
-    for (var i = 0; i<array.length; i++){
-        returnedString = returnedString + array[i] + divider;
+    for (var i = 0; i < array.length; i++){
+        result +=  array[i] + divider;
     }
-    return returnedString;
+    return result;
 };
 
-var indexOfString = function (array, value) {
-    var returnedString = '';
-    for (var i = 0; i<array.length; i++){
-        if (array[i] === value) {
-            returnedString = returnedString + array[i];
-        }
-    }
-    return returnedString === '' ? -1 : returnedString
-};
-
-var indexesOf = function (array, value) {
-    var returnedArray = [];
-    for (var i = 0; i<array.length; i++){
-        if (array[i] === value) {
-            returnedArray[returnedArray.length] = array[i];
-        }
-    }
-    return returnedArray === [] ? -1 : returnedArray;
-};
-
+!!!!!
 var indexOf = function (array, value) {
     var returnedFirstIndexl;
     for (var i = 0; i < array.length; i++){
@@ -142,8 +110,8 @@ var indexOf = function (array, value) {
     }
     return returnedFirstIndex === undefined ? -1 : returnedFirstIndex;
 };
-
-var indexOf = function (array, value) {
+!!!!!!
+var lastIndexOf = function (array, value) {
     var returnedLastIndex;
     for (var i = array.length; i >= 0; i--){
         if (array[i] === value) {
@@ -153,86 +121,90 @@ var indexOf = function (array, value) {
     }
     return returnedLastIndex === undefined ? -1 : returnedLastIndex;
 };
-
-var concat = function (array1, array2) {
+!!!
+var concat = function(array1, array2) {
+    var result = [];
+    for (var i = 0; i <array1.length; i++) {
+        result[result.length] = array1[i];
+    }
     for (var i = 0; i <array2.length; i++) {
-        array1[array1.length] = array2[i];
+        result[result.length] = array2[i];
     }
-    return array1;
+    return result;
 };
 
-var push = function (array, value) {
+var push = function(array, value) {
     array[array.length] = value;
-    return array;
+    //return array;
 };
 
-var sum = function (array) {
-    var arraySum = 0;
-    for (var i = 0; i <array.length; i++) {
-         arraySum += array[i];
+var sum = function(array) {
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+         sum += array[i];
     }
-    return arraySum;
+    return sum;
 };
 
-var multiply = function (array) {
-    var arrayMultiply = 1;
-    for (var i = 0; i <array.length; i++) {
-        arrayMultiply *= array[i];
+var multiply = function(array) {
+    var multiply = 1;
+    for (var i = 0; i < array.length; i++) {
+        multiply *= array[i];
     }
-    return arrayMultiply;
+    return multiply;
 };
 
-var keys = function (object) {
-    var returnedArray = [];
+var keys = function(object) {
+    var result = [];
     for (var key in object) {
-        returnedArray[returnedArray.length] = key;
+        result[result.length] = key;
     }
-    return returnedArray;
+    return result;
 };
 
-var values = function (object) {
-    var returnedArray = [];
+var values = function(object) {
+    var result = [];
     for (var key in object) {
-        returnedArray[returnedArray.length] = object[key];
+        result[result.length] = object[key];
     }
-    return returnedArray;
+    return result;
 };
 
-var pairs = function (object) {
-    var returnedArray = [];
+var pairs = function(object) {
+    var result = [];
     for (var key in object) {
-        var pairArray = [];
-        pairArray[pairArray.length] = key;
-        pairArray[pairArray.length] = object[key];
-        returnedArray[returnedArray.length] = pairArray;
+        result[result.length] = [key, object[key]];
     }
-    return returnedArray;
+    return result;
 };
 
-var invert = function (object) {
-    var returnedObject = {};
+var invert = function(object) {
+    var result = {};
     for (var key in object) {
-        var toKey = '';
-        var toValue = '';
-        toKey = object[key];
-        toValue = key;
-        console.log(toKey);
-        console.log(toValue);
-        returnedObject[toKey] = toValue;
+        result[object[key]] = key;
     }
-    return returnedObject;
+    return result;
 };
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 var omit = function(object, removeValue) {
-    delete object[removeValue];
-    return object;
+    var result = {};
+    for (var key in object) {
+        if (key === removeValue);
+        else {
+            result[key] = object[key];
+        }
+    }
+    return result;
 };
 
-var has = function (object, key) {
-    return object[key] !== undefined;
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var has = function(object, key) {
+    return (key in object);
 };
 
-var isMatch = function (object1, object2) {
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var isMatch = function(object1, object2) {
     for (var key in object2) {
         return object1[key] === object2[key];
     }
@@ -243,14 +215,19 @@ var isMatch = function (object1, object2) {
 isMatch({name: 'moe', age: 32}, {age: 32});
 // => true
 
-var isEmpty = function (collection) {
-    var counter = 0;
+
+
+
+
+
+var isEmpty = function(collection) {
     for (var key in collection) {
-        counter ++;
+        return false;
     }
-    return counter === 0;
+    return true;
 };
 
+//22222222222222222222222222222222222
 var uniq = function (array) {
     var returnedArray = [];
     goto:
@@ -263,6 +240,7 @@ var uniq = function (array) {
     return returnedArray;
 };
 
+//22222222222222222222222222222222222222222222222
 var sort = function (array) {
     for (var i = 0; i <array.length ; i++) {
         for (var j = 0; j < (array.length - 1); j++) {
@@ -277,31 +255,33 @@ var sort = function (array) {
     return array;
 };
 
-var getMatrixSum = function (array) {
-    var returnSum = 0;
+var getMatrixSum = function(array) {
+    var sum = 0;
     for(var i = 0; i < array.length; i++){
-        for(var j = 0; j<array[i].length; j++){
-            returnSum += array[i][j];
+        for(var j = 0; j < array[i].length; j++){
+            sum += array[i][j];
         }
     }
-    return returnSum;
+    return sum;
+};
+
+var getMatrixSumByDiagonal = function(array) {
+    var sum = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i][i];
+    }
+    return sum;
+};
+
+var each = function(array, iteratee) {
+    for (var i = 0; i < array.length; i++) {
+        iteratee(array[i], i)
+    }
 };
 
 
-
-
-
-
-
-Создать функцию getMatrixSumByDiagonal которая принимает квадратную матрицу чисел и возвращает сумму чисел по диагонали (слева направо, сверху вниз).
-Пример работы:
-getMatrixSumByDiagonal([[1, 2, 3], [3, 0, 4], [0, 1, 2]]);
-// => 3
-
-
-
-
-Создать функцию each с двумя входными параметрами (массив и функция iteratee). Функция each проходит по всему списку элементов, вызывая для каждого из них функцию iteratee.
+Создать функцию each с двумя входными параметрами (массив и функция iteratee). Функция each проходит по всему списку эементов,
+вызывая для каждого из них функцию iteratee.
 При каждом вызове в iteratee будут переданы два аргумента: (element, index).
 Пример работы:
 each([1, 2, 3], function(element, index) { console.log(element, index); });
@@ -310,24 +290,28 @@ each([1, 2, 3], function(element, index) { console.log(element, index); });
 
 
 
-Создать функцию map с двумя входными параметрами (массив и функция iteratee). Функция map возвращает новый массив, полученный преобразованием каждого элемента массива в функции iteratee.
+Создать функцию map с двумя входными параметрами (массив и функция iteratee). Функция map возвращает новый массив,
+полученный преобразованием каждого элемента массива в функции iteratee.
 Функция iteratee получает два аргумента: значение value, индекс index.
 Пример работы:
 map([1, 2, 3], function(value) { return value * 3; });
 // => [3, 6, 9]
 
+var intersection = function (array1, array2) {
+    var returnedArray = [];
+        for (var i = 0; i < array1.length; i++) {
+            if ( array1[i] === array2[i]) {
+                    returnedArray[returnedArray.length] = array1[i];
+                }
+            }
+    return returnedArray;
+};
 
 
 
-Создать функцию intersection которая принимает два массива и возвращает массив из элементов, встречающихся в каждом из переданных массивов.
-Пример работы:
-intersection([1, 2, 3], [101, 2, 1, 10]);
-// => [1, 2]
 
-
-
-
-Создать функцию findIndex с двумя входными параметрами (массив и функция predicate). Функция findIndex так же как и indexOf, возвращает первый индекс того значения, для которого функция predicate вернёт true. Если такой элемент не был найден, вернёт -1.
+Создать функцию findIndex с двумя входными параметрами (массив и функция predicate). Функция findIndex так же как и indexOf,
+возвращает первый индекс того значения, для которого функция predicate вернёт true. Если такой элемент не был найден, вернёт -1.
 Пример работы:
 findIndex([4, 6, 8, 12], function(value) { return value === 8; });
 // => 2
@@ -335,7 +319,8 @@ findIndex([4, 6, 8, 12], function(value) { return value === 8; });
 
 
 
-Создать функцию find с двумя входными параметрами (массив list и функция predicate). Функция find вызывает для каждого элемента list функцию сравнения predicate, возвращая первый элемент, для которого predicate вернула true, или undefined, если ни один элемент не подошёл.
+Создать функцию find с двумя входными параметрами (массив list и функция predicate). Функция find вызывает для каждого элемента list
+функцию сравнения predicate, возвращая первый элемент, для которого predicate вернула true, или undefined, если ни один элемент не подошёл.
 Пример работы:
 find([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
 // => 2
@@ -343,7 +328,8 @@ find([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
 
 
 
-Создать функцию filter с двумя входными параметрами (массив list и функция predicate) которая проходит через каждое значение list, возвращая массив всех значений, для которых predicate вернул true.
+Создать функцию filter с двумя входными параметрами (массив list и функция predicate) которая проходит через каждое значение list,
+    возвращая массив всех значений, для которых predicate вернул true.
 Пример работы:
 filter([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
 // => [2, 4, 6]
@@ -351,7 +337,8 @@ filter([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
 
 
 
-Создать функцию reject с двумя входными параметрами (массив list и функция predicate) которая возвращает массив, содержащий все значения list, за исключением элементов, для которых функция predicate вернула значение true. Т.е. reject является «антонимом» filter.
+Создать функцию reject с двумя входными параметрами (массив list и функция predicate) которая возвращает массив, содержащий все значения list,
+за исключением элементов, для которых функция predicate вернула значение true. Т.е. reject является «антонимом» filter.
 Пример работы:
 reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 // => [1, 3, 5]
@@ -375,7 +362,8 @@ some([2, 4, 5], function(num) { return num % 2 == 0; });
 
 
 
-Создать функцию partition с двумя входными параметрами (массив array и функция predicate). Разобъёт массив array на две части: одна - для элементов которой функция predicate вернёт true, и другая - для всех остальных.
+Создать функцию partition с двумя входными параметрами (массив array и функция predicate). Разобъёт массив array на две части:
+одна - для элементов которой функция predicate вернёт true, и другая - для всех остальных.
 Пример работы:
 partition([0, 1, 2, 3, 4, 5], function(num) { return num % 2 == 0; });
 // => [[0, 2, 4], [1, 3, 5]]
@@ -383,7 +371,8 @@ partition([0, 1, 2, 3, 4, 5], function(num) { return num % 2 == 0; });
 
 
 
-Создать функцию extend с двумя входными параметрами (объект destination и объект source). Скопирует все свойства из объекта source в объект destination. Если объект source имеет одноименные свойства с объектом destination, то значения destination будут затёрты значениями из source.
+Создать функцию extend с двумя входными параметрами (объект destination и объект source). Скопирует все свойства из объекта
+source в объект destination. Если объект source имеет одноименные свойства с объектом destination, то значения destination будут затёрты значениями из source.
 Пример работы:
 extend({name: 'moe'}, {age: 50});
 // => {name: 'moe', age: 50}
@@ -391,7 +380,8 @@ extend({name: 'moe'}, {age: 50});
 
 
 
-Создать функцию defaults с двумя входными параметрами (объект object и объект default). Функция defaults проинициализирует неопределённые (undefined) свойства объета значениями одноимённых свойств из default. Если же какие-то свойства объекта уже определены, то они не будут изменены.
+Создать функцию defaults с двумя входными параметрами (объект object и объект default). Функция defaults проинициализирует неопределённые (undefined)
+свойства объета значениями одноимённых свойств из default. Если же какие-то свойства объекта уже определены, то они не будут изменены.
 Пример работы:
 defaults({flavor: "chocolate"}, {flavor: "vanilla", sprinkles: "lots"});
 // => {flavor: "chocolate", sprinkles: "lots"}
@@ -399,7 +389,8 @@ defaults({flavor: "chocolate"}, {flavor: "vanilla", sprinkles: "lots"});
 
 
 
-Создать функцию random с двумя (или одним) входными параметрами (min, max). Возвращает случайное целое число, в диапазоне от min до max, включительно. Если вы передали только один агрумент, будет использован диапазон от 0 до переданного числа (т.е. до max).
+Создать функцию random с двумя (или одним) входными параметрами (min, max). Возвращает случайное целое число, в диапазоне от min до max,
+включительно. Если вы передали только один агрумент, будет использован диапазон от 0 до переданного числа (т.е. до max).
 Пример работы:
 random(0, 100);
 // => 42
