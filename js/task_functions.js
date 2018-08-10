@@ -186,7 +186,7 @@ var invert = function(object) {
     return result;
 };
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!
 var omit = function(object, removeValue) {
     var result = {};
     for (var key in object) {
@@ -198,27 +198,16 @@ var omit = function(object, removeValue) {
     return result;
 };
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
 var has = function(object, key) {
     return (key in object);
 };
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 var isMatch = function(object1, object2) {
     for (var key in object2) {
         return object1[key] === object2[key];
     }
 };
-
-Создать функцию isMatch которая проверяет, содержатся ли ключи-значения в объекте. Если да, то возвращает true иначе false.
-Пример работы:
-isMatch({name: 'moe', age: 32}, {age: 32});
-// => true
-
-
-
-
-
 
 var isEmpty = function(collection) {
     for (var key in collection) {
@@ -279,23 +268,13 @@ var each = function(array, iteratee) {
     }
 };
 
-
-Создать функцию each с двумя входными параметрами (массив и функция iteratee). Функция each проходит по всему списку эементов,
-вызывая для каждого из них функцию iteratee.
-При каждом вызове в iteratee будут переданы два аргумента: (element, index).
-Пример работы:
-each([1, 2, 3], function(element, index) { console.log(element, index); });
-// => выведет в консоль все цифры и соответствующие им индексы по очереди
-
-
-
-
-Создать функцию map с двумя входными параметрами (массив и функция iteratee). Функция map возвращает новый массив,
-полученный преобразованием каждого элемента массива в функции iteratee.
-Функция iteratee получает два аргумента: значение value, индекс index.
-Пример работы:
-map([1, 2, 3], function(value) { return value * 3; });
-// => [3, 6, 9]
+var map = function(array, iteratee) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        result[result.length] = iteratee(array[i]);
+    }
+    return result;
+};
 
 var intersection = function (array1, array2) {
     var returnedArray = [];
@@ -307,14 +286,12 @@ var intersection = function (array1, array2) {
     return returnedArray;
 };
 
-
-
-
-Создать функцию findIndex с двумя входными параметрами (массив и функция predicate). Функция findIndex так же как и indexOf,
-возвращает первый индекс того значения, для которого функция predicate вернёт true. Если такой элемент не был найден, вернёт -1.
-Пример работы:
-findIndex([4, 6, 8, 12], function(value) { return value === 8; });
-// => 2
+var findIndex = function(array, predicate){
+    for (var i = 0; i < array.length; i++) {
+        if (predicate(array[i]) === true) return i;
+    }
+    return -1;
+};
 
 
 
