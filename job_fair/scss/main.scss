@@ -1,3 +1,5 @@
+$content_width: 1000px;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +10,11 @@ body {
     font-family: Verdana;
     width: 100%;
 }
+
+.site_menu {
+    width: $content_width;
+    margin: auto;
+ }
 
 /*
     Для заголовка "Карта рынка труда России" используется
