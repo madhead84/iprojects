@@ -185,11 +185,21 @@ body {
     }
 }
 
+.triangle_left_button::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    bottom: 3px;
+    border: 9px solid transparent;
+    border-right: 14px solid #ffffff;
+}
 
 .triangle_left_button {
     width: 24px;
     height: 24px;
-    background: url("../images/left_button.png") no-repeat;
+    //background: url("../images/left_button.png") no-repeat;
+    background: #218fbb;
+    border-radius: 4px;
     border: 0;
     position: absolute;
     margin-top: -5px;
