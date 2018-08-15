@@ -1,4 +1,4 @@
-$content_width: 1000px;
+$content_width: 1012px;
 
 * {
     box-sizing: border-box;
@@ -29,7 +29,6 @@ body {
 
 .banner {
     background: #218fbb;
-
 }
 
 .banner_container {
@@ -88,13 +87,14 @@ body {
         border-top-right-radius: 6px;
         background: #0b6588;
         display: inline-block;
-        width: 130px;
+        width: 125px;
         text-align: center;
         color: #ffffff;
         text-decoration: none;
         font-size: 12px;
         padding-top: 10px;
         padding-bottom: 10px;
+        font-weight: bold;
 
         &:active {
             background: #043a4f;
@@ -113,7 +113,7 @@ body {
 }
 
 .logout {
-    margin-left: 60px;
+    margin-left: 50px;
     margin-bottom: 0px;
     background: #74b8d2;
     border: 0;
@@ -123,6 +123,17 @@ body {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     font-size: 12px;
+    font-weight: bold;
+}
+
+.expand {
+    width: 27px;
+    height: 24px;
+    margin-left: 28px;
+    background: url("../images/down_button.png") no-repeat;
+    border: 0;
+    position: absolute;
+    margin-top: 26px;
 }
 
 .info {
@@ -133,18 +144,101 @@ body {
 
 }
 
-.text {
+.info_text {
+    font-family: Times New Roman;
     border: #1f617a 6px solid;
     border-radius: 6px;
     background: #1f617a;
     color: #ffffff;
-;
+    padding: 20px 120px 5px 0;
+
+    h2 {
+        padding-left: 40px;
+        font-size: 22px;
+        display: inline-block;
+    }
+
+    p {
+        padding-left: 40px;
+        font-family: Arial;
+        padding-top: 20px;
+        font-size: 12px;
+    }
+}
+
+.buttons {
+    display: inline-block;
+    float: right;
+
+    button {
+        width: 25px;
+        height: 25px;
+        background: #218fbb;
+        color: #ffffff;
+        border: 0;
+        border-radius: 4px;
+
+        &:active, &:focus {
+            background: #2fbaf1;
+            outline: none;
+        }
+    }
+}
+
+
+.triangle_left_button {
+    width: 24px;
+    height: 24px;
+    background: url("../images/left_button.png") no-repeat;
+    border: 0;
+    position: absolute;
+    margin-top: -5px;
+}
+
+.triangle_right_button {
+    width: 24px;
+    height: 24px;
+    background: url("../images/right_button.png") no-repeat;
+    border: 0;
+    margin-top: -5px;
+    margin-left: 955px;
+}
+
+.full_information {
+    width: $content_width;
+    margin: auto;
+    height: 510px;
+    background: #043a4f;
+}
+
+.full_information_text {
+    background: #ffffff;
+    width: 998px;
+    margin: auto;
+    height: 502px;
+    border-radius: 6px;
 }
 /*
     Для заголовка "Карта рынка труда России" используется
-    font-family: "Times New Roman";
+    ;
 */
 
 .footer {
+    width: $content_width;
+    margin: 20px auto;
     font-family: Tahoma;
+    font-size: 12px;
+    padding-left: 20px;
+
+    a {
+        color: #676767;
+        margin-right: 40px;
+    }
+
+    & :nth-child(5) {
+        float: right;
+        margin-right: 10px;
+    }
+
+
 }
