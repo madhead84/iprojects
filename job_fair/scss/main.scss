@@ -100,9 +100,6 @@ body {
             background: #043a4f;
         }
 
-/*        &:hover {
-            background: #043a4f;
-        }*/
     }
 
     & :nth-child(6) {
@@ -192,6 +189,11 @@ body {
     bottom: 3px;
     border: 9px solid transparent;
     border-right: 14px solid #ffffff;
+
+    &:focus {
+        outline: none;
+    }
+
 }
 
 .triangle_left_button {
