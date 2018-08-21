@@ -130,10 +130,6 @@ document.querySelector('.b17').addEventListener('click', function() {
     }
 });
 
-
-
-
-
 var resultHTML = '';
 for (var i = 0; i < mikki.length; i++) {
     for (var j = 0; j < mikki[i].length; j++) {
@@ -144,3 +140,62 @@ for (var i = 0; i < mikki.length; i++) {
     }
 }
 document.querySelector('.mikki_tiles').innerHTML = resultHTML;
+
+var possitionLeft = 0;
+var setIntervalSkinner;
+var moveSkinner = function(){
+    possitionLeft += 5;
+    document.querySelector('.skier').style.left = possitionLeft + 'px';
+};
+
+document.querySelector('.b18').addEventListener('click', function() {
+    setIntervalSkinner = setInterval(moveSkinner, 16);
+});
+
+document.querySelector('.b18-2').addEventListener('click', function () {
+    clearInterval(setIntervalSkinner);
+});
+
+var currentImage;
+var nextImage;
+
+document.querySelector('.next').addEventListener('click', function () {
+    currentImage = document.querySelector('.active');
+    nextImage = document.querySelector('.active').nextElementSibling;
+    if (nextImage.classList.contains('slide') === true) {
+    currentImage.classList.remove('active');
+    nextImage.classList.add('active');
+    }
+});
+
+document.querySelector('.previous').addEventListener('click', function () {
+    currentImage = document.querySelector('.active');
+    nextImage = document.querySelector('.active').previousElementSibling;
+    if (nextImage.classList.contains('slide') === true) {
+        currentImage.classList.remove('active');
+        nextImage.classList.add('active');
+    }
+});
+
+
+var clickedElement;
+document.querySelector('.question').addEventListener('click', function () {
+    console.log('[vfdvd');
+    clickedElement = event.target;
+    clickedElement.classList.contains('active') ?  clickedElement.classList.remove('active') : clickedElement.classList.add('active');
+
+/*   else {
+       clickedElement.classList.add('active')
+   }*/
+});
+
+document.querySelector('.show-login-pop-up').addEventListener('click', function () {
+    document.querySelector('.hidden').style.display = 'block';
+    document.querySelector('.pop-up').style.display = 'block';
+});
+
+document.querySelector('.close').addEventListener('click', function () {
+    document.querySelector('.hidden').style.display = 'none';
+    document.querySelector('.pop-up').style.display = 'none';
+});
+
