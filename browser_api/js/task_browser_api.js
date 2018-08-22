@@ -54,13 +54,13 @@ document.querySelector('.b11').addEventListener('click', function () {
     document.querySelector('.t11').classList.contains('hi') ? document.querySelector('.t11').classList.remove('hi') : document.querySelector('.t11').classList.add('hi');
 });
 
-document.body.addEventListener('click', function () {
-    document.querySelector('.t12').innerHTML = 'хуй';
-
+document.body.addEventListener('click', function (e) {
+    var target = e.target;
+    document.querySelector('.t12').textContent = target.getAttribute('class');
 });
 
 document.querySelector('.b13').addEventListener('click', function () {
-    document.querySelector('.t13').innerHTML='Sun';
+    document.querySelector('.t13').innerText = document.querySelector('.t13').getAttribute('data-en');
 });
 
 document.querySelector('.b14').addEventListener('click', function () {
@@ -149,11 +149,11 @@ var moveSkinner = function(){
 };
 
 document.querySelector('.b18').addEventListener('click', function() {
-    setIntervalSkinner = setInterval(moveSkinner, 16);
-});
+    var setIntervalSkinner = setInterval(moveSkinner, 16);
 
-document.querySelector('.b18-2').addEventListener('click', function () {
-    clearInterval(setIntervalSkinner);
+    document.querySelector('.b18-2').addEventListener('click', function () {
+            clearInterval(setIntervalSkinner);
+    });
 });
 
 var currentImage;
@@ -178,11 +178,14 @@ document.querySelector('.previous').addEventListener('click', function () {
 });
 
 
-var clickedElement;
-document.querySelector('.question').addEventListener('click', function () {
+document.body.addEventListener('click', function (e) {
+    var target = e.target;
     console.log('[vfdvd');
-    clickedElement = event.target;
-    clickedElement.classList.contains('active') ?  clickedElement.classList.remove('active') : clickedElement.classList.add('active');
+    if (target.classList.contains('question') === true);{
+        //target.classList.contains('active') ?  target.classList.remove('active') : target.classList.add('active');
+        target.classList.toggle('active');
+    }
+
 
 /*   else {
        clickedElement.classList.add('active')
@@ -198,4 +201,3 @@ document.querySelector('.close').addEventListener('click', function () {
     document.querySelector('.hidden').style.display = 'none';
     document.querySelector('.pop-up').style.display = 'none';
 });
-
