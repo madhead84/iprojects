@@ -220,3 +220,20 @@ document.body.addEventListener('click', function (e) {
         targetEl.classList.add('active');
     }
 });
+
+
+/*document.querySelector('.link-ebanoe').onclick = function (e) {
+    e.preventDefault();
+};*/
+
+document.querySelector('.link-ebanoe').addEventListener('click', function(e) {
+    e.preventDefault();
+});
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://127.0.0.1:3000/', true);
+xhr.send();
+if (xhr.status === 200) {
+
+    xhr.responseText;
+}
