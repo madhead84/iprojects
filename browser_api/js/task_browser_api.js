@@ -149,7 +149,7 @@ var moveSkinner = function(){
 };
 
 document.querySelector('.b18').addEventListener('click', function() {
-    var setIntervalSkinner = setInterval(moveSkinner, 16);
+    setIntervalSkinner = setInterval(moveSkinner, 16);
 
     document.querySelector('.b18-2').addEventListener('click', function () {
             clearInterval(setIntervalSkinner);
@@ -180,8 +180,7 @@ document.querySelector('.previous').addEventListener('click', function () {
 
 document.body.addEventListener('click', function (e) {
     var target = e.target;
-    console.log('[vfdvd');
-    if (target.classList.contains('question') === true);{
+    if (target.classList.contains('question') === true) {
         //target.classList.contains('active') ?  target.classList.remove('active') : target.classList.add('active');
         target.classList.toggle('active');
     }
@@ -200,4 +199,24 @@ document.querySelector('.show-login-pop-up').addEventListener('click', function 
 document.querySelector('.close').addEventListener('click', function () {
     document.querySelector('.hidden').style.display = 'none';
     document.querySelector('.pop-up').style.display = 'none';
+});
+
+document.body.addEventListener('click', function (e) {
+    var currentTab = document.querySelector('.x-tabs .active');
+    var currentEl;
+    var currentElAttribute;
+    var targetTab = e.target;
+    var targetEl;
+    var targetElAttribute;
+
+    if (targetTab.classList.contains('x-tab') === true) {
+        currentTab.classList.remove('active');
+        targetTab.classList.add('active');
+        currentElAttribute = currentTab.getAttribute('data-tab');
+        targetElAttribute = targetTab.getAttribute('data-tab');
+        currentEl = document.querySelector('[data-section="' + currentElAttribute + '"]');
+        targetEl = document.querySelector('[data-section="' + targetElAttribute + '"]');
+        currentEl.classList.remove('active');
+        targetEl.classList.add('active');
+    }
 });
