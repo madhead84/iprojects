@@ -118,34 +118,32 @@ $('.b18').on('click', function() {
             var left = j * 16;
             var el = document.createElement('div');
             if (map[i][j] === 'z'){
-                el.addClass('tile x_z');
+                $(el).addClass('x_z')
             }
             if (map[i][j] === 'k'){
-                el.addClass('tile x_k');
+                $(el).addClass('x_k');
             }
             if (map[i][j] === 'c'){
-                el.addClass('tile x_c');
+                $(el).addClass('x_c');
             }
             if (map[i][j] === 't'){
-                el.addClass('tile x_t');
+                $(el).addClass('x_t');
             }
             if (map[i][j] === 'q'){
-                el.addClass('tile x_q');
+                $(el).addClass('x_q');
             }
             if (map[i][j] === 'b'){
-                el.addClass('tile x_b');
+                $(el).addClass('x_b');
             }
             if (map[i][j] === 'd'){
-                el.addClass('tile x_d');
+                $(el).addClass('x_d');
             }
             if (map[i][j] === 'w'){
-                el.addClass('tile x_w');
+                $(el).addClass('x_w');
             }
-            if (map[i][j] === '') {
-                el.addClass('tile');
-            }
-            el.css('top', top +'px');
-            el.css('left', left +'px');
+            $(el).addClass('tile');
+            $(el).css('top', top +'px');
+            $(el).css('left', left +'px');
             $('.scene').append(el);
         }
     }
