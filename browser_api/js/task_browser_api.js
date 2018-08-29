@@ -56,7 +56,7 @@ document.querySelector('.b11').addEventListener('click', function () {
 
 document.body.addEventListener('click', function (e) {
     var target = e.target;
-    document.querySelector('.t12').textContent = target.getAttribute('class');
+    document.querySelector('.t12').textContent = target.className;
 });
 
 document.querySelector('.b13').addEventListener('click', function () {
@@ -75,7 +75,8 @@ document.querySelector('.b14').addEventListener('click', function () {
         '<div class="whore-height">Рост: '+ whore.height +'</div>' +
         '<div class="whore-weight">Вес: '+ whore.heigh +'</div>'+
         '<div class="whore-phone">'+ whore.phone +'</div>' +
-        '<div class="whore-can-come">Выезд: '+ (whore.can_come ? 'Да' : '-') +'</div>';
+        '<div class="whore-can-come">Выезд: '+ (whore.can_come ? 'Да' : '-') +'</div>' +
+        '<div class="whore-teaser">' + whore.teaser + '</div>';
 });
 
 document.querySelector('.b15').addEventListener('click', function () {
@@ -142,13 +143,14 @@ for (var i = 0; i < mikki.length; i++) {
 document.querySelector('.mikki_tiles').innerHTML = resultHTML;
 
 var possitionLeft = 0;
-var setIntervalSkinner;
+
 var moveSkinner = function(){
     possitionLeft += 5;
     document.querySelector('.skier').style.left = possitionLeft + 'px';
 };
 
 document.querySelector('.b18').addEventListener('click', function() {
+    var setIntervalSkinner;
     setIntervalSkinner = setInterval(moveSkinner, 16);
 
     document.querySelector('.b18-2').addEventListener('click', function () {
