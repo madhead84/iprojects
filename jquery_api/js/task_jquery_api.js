@@ -116,7 +116,7 @@ $('.b18').on('click', function() {
         for (var j = 0; j < map[i].length; j++) {
             var top = i * 16;
             var left = j * 16;
-            var el = document.createElement('div');
+            var el = $('<div>');
             if (map[i][j] === 'z'){
                 $(el).addClass('x_z')
             }
