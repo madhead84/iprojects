@@ -148,3 +148,101 @@ $('.b18').on('click', function() {
         }
     }
 });
+
+$('.next').on('click', function () {
+    currentImage = $('.slider .active');
+    nextImage = $('.active').next('.slide');
+    if (nextImage.hasClass('slide') === true) {
+        currentImage.removeClass('active');
+        nextImage.addClass('active');
+    }
+});
+
+$('.previous').on('click', function () {
+    currentImage = $('.slider .active');
+    nextImage = $('.active').prev('.slide');
+    if (nextImage.hasClass('slide') === true) {
+        currentImage.removeClass('active');
+        nextImage.addClass('active');
+    }
+});
+
+$('body').on('click', function (event) {
+    if ($(event.target).hasClass('question') === true) {
+        //target.classList.contains('active') ?  target.classList.remove('active') : target.classList.add('active');
+        $(event.target).toggleClass('active');
+    }
+});
+
+document.body.addEventListener('click', function (e) {
+    var currentTab = $('.x-tabs .active');
+    var currentEl;
+    var currentElAttribute;
+    var targetTab = e.target;
+    var targetEl;
+    var targetElAttribute;
+
+    if ($(targetTab).hasClass('x-tab') === true) {
+        $(currentTab).removeClass('active');
+        $(targetTab).addClass('active');
+        currentElAttribute = $(currentTab).attr('data-tab');
+        targetElAttribute = $(targetTab).attr('data-tab');
+        currentEl = $('[data-section="' + currentElAttribute + '"]');
+        targetEl = $('[data-section="' + targetElAttribute + '"]');
+        $(currentEl).removeClass('active');
+        $(targetEl).addClass('active');
+    }
+});
+
+$('.show-login-pop-up').on('click', function () {
+    $('.hidden').css('display', 'block');
+    $('.pop-up').css('display', 'block');
+});
+
+$('.close').on('click', function () {
+    $('.hidden').css('display', 'none');
+    $('.pop-up').css('display', 'none');
+});
+
+$('.link-ebanoe').on('click', function(e) {
+    e.preventDefault();
+});
+
+var loadGames = function(games) {
+    var gameTemplate = html($('#game-template'));
+    var gameTemplateFn = doT.template(gameTemplate);
+    var result = '';
+    for (var i = 0; i < games.length; i++) {
+        result += gameTemplateFn(games[i]);
+    }
+    return result;
+};
+
+document.querySelector('.load-more').addEventListener('click', function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://127.0.0.1:3000/');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.querySelector('.games').innerHTML += loadGames(JSON.parse(xhr.responseText));
+        }
+    };
+    xhr.send();
+});
+
+var loadTemplate = function(navLinks) {
+    var navTemplate = document.querySelector('#nav-template').innerHTML;
+    var navTemplateEn = doT.template(navTemplate);
+    return navTemplateEn(navLinks);
+};
+
+document.querySelector('.btn-nav-en').addEventListener('click', function () {
+    document.querySelector('.nav').innerHTML = loadTemplate({
+        links: navLinksEn
+    });
+});
+
+document.querySelector('.btn-nav-ro').addEventListener('click', function () {
+    document.querySelector('.nav').innerHTML = loadTemplate({
+        links: navLinksRo
+    });
+});
