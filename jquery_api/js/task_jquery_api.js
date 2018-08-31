@@ -219,6 +219,8 @@ var loadGames = function(games) {
 };
 
 $('.load-more').on('click', function() {
+    $.get('http://127.0.0.1:3000/');
+
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://127.0.0.1:3000/');
     xhr.onreadystatechange = function() {
