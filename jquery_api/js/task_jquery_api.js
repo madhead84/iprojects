@@ -209,7 +209,7 @@ $('.link-ebanoe').on('click', function(e) {
 });
 
 var loadGames = function(games) {
-    var gameTemplate = html($('#game-template'));
+    var gameTemplate = $('#game-template').html();
     var gameTemplateFn = doT.template(gameTemplate);
     var result = '';
     for (var i = 0; i < games.length; i++) {
@@ -218,15 +218,18 @@ var loadGames = function(games) {
     return result;
 };
 
-document.querySelector('.load-more').addEventListener('click', function() {
+$('.load-more').on('click', function() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://127.0.0.1:3000/');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            document.querySelector('.games').innerHTML += loadGames(JSON.parse(xhr.responseText));
+            var tempHTML = $('.games').html();
+            tempHTML += loadGames(JSON.parse(xhr.responseText));
+            $('.games').html(tempHTML);
         }
     };
     xhr.send();
+    $('.load-more').off();
 });
 
 var loadTemplate = function(navLinks) {
@@ -235,14 +238,14 @@ var loadTemplate = function(navLinks) {
     return navTemplateEn(navLinks);
 };
 
-document.querySelector('.btn-nav-en').addEventListener('click', function () {
-    document.querySelector('.nav').innerHTML = loadTemplate({
+$('.btn-nav-en').on('click', function () {
+    ($('.nav')).html(loadTemplate({
         links: navLinksEn
-    });
+    }));
 });
 
-document.querySelector('.btn-nav-ro').addEventListener('click', function () {
-    document.querySelector('.nav').innerHTML = loadTemplate({
+$('.btn-nav-ro').on('click', function () {
+    ($('.nav')).html(loadTemplate({
         links: navLinksRo
-    });
+    }));
 });
