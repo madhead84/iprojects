@@ -219,18 +219,15 @@ var loadGames = function(games) {
 };
 
 $('.load-more').on('click', function() {
-    $.get('http://127.0.0.1:3000/');
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://127.0.0.1:3000/');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+    $.ajax({
+        type: "GET",
+        url: "http://127.0.0.1:3000/",
+        success : function(result) {
             var tempHTML = $('.games').html();
-            tempHTML += loadGames(JSON.parse(xhr.responseText));
+            tempHTML += loadGames($.parseJSON(result));
             $('.games').html(tempHTML);
         }
-    };
-    xhr.send();
+    });
     $('.load-more').off();
 });
 
@@ -251,3 +248,4 @@ $('.btn-nav-ro').on('click', function () {
         links: navLinksRo
     }));
 });
+

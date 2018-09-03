@@ -270,3 +270,93 @@ document.querySelector('.btn-nav-ro').addEventListener('click', function () {
         links: navLinksRo
     });
 });
+
+document.querySelector('[name="email"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_email').classList.add('focused');
+    document.querySelector('.field_name_email').classList.remove('invalid')
+});
+
+var regexp = new RegExp();
+document.querySelector('[name="email"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_email').classList.remove('focused');
+    regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var tested = document.querySelector('[name="email"]').value;
+    if (regexp.test(tested) === true) {
+
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_email').classList.add('invalid');
+    }
+});
+
+document.querySelector('[name="userName"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_username').classList.add('focused');
+});
+
+document.querySelector('[name="userName"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_username').classList.remove('focused');
+});
+
+document.querySelector('[name="password"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_password').classList.add('focused');
+});
+
+document.querySelector('[name="password"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_password').classList.remove('focused');
+});
+
+document.querySelector('[name="firstname"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_first-name').classList.add('focused');
+});
+
+document.querySelector('[name="firstname"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_first-name').classList.remove('focused');
+});
+
+document.querySelector('[name="lastname"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_last-name').classList.add('focused');
+});
+
+document.querySelector('[name="lastname"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_last-name').classList.remove('focused');
+});
+
+document.querySelector('[name="address"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_address').classList.add('focused');
+});
+
+document.querySelector('[name="address"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_address').classList.remove('focused');
+});
+
+document.querySelector('[name="city"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_city').classList.add('focused');
+});
+
+document.querySelector('[name="city"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_city').classList.remove('focused');
+});
+
+document.querySelector('[name="zip"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_zip').classList.add('focused');
+});
+
+document.querySelector('[name="zip"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_zip').classList.remove('focused');
+});
+
+document.querySelector('[name="phonenumber"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_phone-number').classList.add('focused');
+});
+
+document.querySelector('[name="phonenumber"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_phone-number').classList.remove('focused');
+});
+
+document.querySelector('[name="coupon"]').addEventListener('focus', function (){
+    document.querySelector('.field_name_promo-code').classList.add('focused');
+});
+
+document.querySelector('[name="coupon"]').addEventListener('blur', function (){
+    document.querySelector('.field_name_promo-code').classList.remove('focused');
+});
