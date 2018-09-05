@@ -282,7 +282,6 @@ document.querySelector('[name="email"]').addEventListener('blur', function (){
     regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var tested = document.querySelector('[name="email"]').value;
     if (regexp.test(tested) === true) {
-
     }
     if (regexp.test(tested) === false) {
         document.querySelector('.field_name_email').classList.add('invalid');
@@ -291,72 +290,155 @@ document.querySelector('[name="email"]').addEventListener('blur', function (){
 
 document.querySelector('[name="userName"]').addEventListener('focus', function (){
     document.querySelector('.field_name_username').classList.add('focused');
+    document.querySelector('.field_name_username').classList.remove('invalid')
 });
 
 document.querySelector('[name="userName"]').addEventListener('blur', function (){
     document.querySelector('.field_name_username').classList.remove('focused');
+    regexp = /^[a-zA-Z]{3,10}$/;
+    var tested = document.querySelector('[name="userName"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_username').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="password"]').addEventListener('focus', function (){
     document.querySelector('.field_name_password').classList.add('focused');
+    document.querySelector('.field_name_password').classList.remove('invalid')
 });
 
 document.querySelector('[name="password"]').addEventListener('blur', function (){
     document.querySelector('.field_name_password').classList.remove('focused');
+    regexp = /^[a-zA-Z0-9]{8,20}$/;
+    var tested = document.querySelector('[name="password"]').value;
+    if (regexp.test(tested) === true) {
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_password').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="firstname"]').addEventListener('focus', function (){
     document.querySelector('.field_name_first-name').classList.add('focused');
+    document.querySelector('.field_name_first-name').classList.remove('invalid')
 });
 
 document.querySelector('[name="firstname"]').addEventListener('blur', function (){
     document.querySelector('.field_name_first-name').classList.remove('focused');
+    regexp = /^[a-zA-Z]{3,15}$/;
+    var tested = document.querySelector('[name="firstname"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_first-name').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="lastname"]').addEventListener('focus', function (){
     document.querySelector('.field_name_last-name').classList.add('focused');
+    document.querySelector('.field_name_last-name').classList.remove('invalid')
 });
 
 document.querySelector('[name="lastname"]').addEventListener('blur', function (){
     document.querySelector('.field_name_last-name').classList.remove('focused');
+    regexp = /^[a-zA-Z]{4,20}$/;
+    var tested = document.querySelector('[name="lastname"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_last-name').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="address"]').addEventListener('focus', function (){
     document.querySelector('.field_name_address').classList.add('focused');
+    document.querySelector('.field_name_address').classList.remove('invalid')
 });
 
 document.querySelector('[name="address"]').addEventListener('blur', function (){
     document.querySelector('.field_name_address').classList.remove('focused');
+    regexp = /^[a-zA-Z]{4,30}$/;
+    var tested = document.querySelector('[name="address"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_address').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="city"]').addEventListener('focus', function (){
     document.querySelector('.field_name_city').classList.add('focused');
+    document.querySelector('.field_name_city').classList.remove('invalid')
 });
 
 document.querySelector('[name="city"]').addEventListener('blur', function (){
     document.querySelector('.field_name_city').classList.remove('focused');
+    regexp = /^[a-zA-Z]{3,16}$/;
+    var tested = document.querySelector('[name="city"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_city').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="zip"]').addEventListener('focus', function (){
     document.querySelector('.field_name_zip').classList.add('focused');
+    document.querySelector('.field_name_zip').classList.remove('invalid')
 });
 
 document.querySelector('[name="zip"]').addEventListener('blur', function (){
     document.querySelector('.field_name_zip').classList.remove('focused');
+    regexp = /^[0-9]{5}$/;
+    var tested = document.querySelector('[name="zip"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_zip').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="phonenumber"]').addEventListener('focus', function (){
     document.querySelector('.field_name_phone-number').classList.add('focused');
+    document.querySelector('.field_name_phone-number').classList.remove('invalid')
 });
 
 document.querySelector('[name="phonenumber"]').addEventListener('blur', function (){
     document.querySelector('.field_name_phone-number').classList.remove('focused');
+    regexp = /^[+][0-9]{12}$/;
+    var tested = document.querySelector('[name="phonenumber"]').value;
+    if (regexp.test(tested) === true) {
+        console.log('yes')
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_phone-number').classList.add('invalid');
+    }
 });
 
 document.querySelector('[name="coupon"]').addEventListener('focus', function (){
     document.querySelector('.field_name_promo-code').classList.add('focused');
+    document.querySelector('.field_name_promo-code').classList.remove('invalid')
 });
 
 document.querySelector('[name="coupon"]').addEventListener('blur', function (){
     document.querySelector('.field_name_promo-code').classList.remove('focused');
+    regexp = /^[a-zA-Z0-9]{10}$/;
+    var tested = document.querySelector('[name="coupon"]').value;
+    if (regexp.test(tested) === true) {
+    }
+    if (regexp.test(tested) === false) {
+        document.querySelector('.field_name_promo-code').classList.add('invalid');
+        console.log('777');
+    }
+    if (tested === '') {
+        document.querySelector('.field_name_promo-code').classList.remove('invalid');
+    }
 });
