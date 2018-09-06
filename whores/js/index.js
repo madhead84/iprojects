@@ -1,23 +1,28 @@
-// localStorage.setItem("Ключ", "Значение");
-// localStorage.getItem("Ключ");
-// localStorage.removeItem("Ключ");
-// var tostring = JSON.stringify(obj);
-// localStorage.setItem("myKey", serialObj);
-// var toOject = JSON.parse('строкаШлюх');
-
 var whoresCollection = {
 
     init: function() {
-        // get data from localStorage
+        this.attributes = localStorage.getItem('whores') || [];
+    },
+
+    add: function(item) {
+        this.attributes.push(item);
+
+        localStorage.setItem('whores', JSON.stringify(this.attributes));
     },
 
     attributes: [],
 
-    getWhoreByID: function() {},
+    getWhoreByID: function(id) {
 
-    removeWhoreByID: function() {}
+    },
+
+    removeWhoreByID: function(id) {
+
+    }
 
 };
+
+whoresCollection.init();
 
 var listView = {
 
@@ -35,17 +40,16 @@ var addFormView = {
 
     init: function() {
         this.render();
-        this.subscribe();
     },
 
     render: function() {
         $('.add-form-container').html(this.tmplFn());
+        this.subscribe();
     },
 
     subscribe: function() {
         $('.add').on('click', function() {
-            var a = this.getFormData();
-            console.log(a);
+            whoresCollection.add(this.getFormData());
         }.bind(this));
     },
 
@@ -69,9 +73,13 @@ addFormView.init();
 
 var editFormView = {
 
+    //tmplFn: doT.template($('#edit-form-templat').html()),
+
     init: function() {},
 
-    render: function() {},
+    render: function() {
+        $('.add-form-container').html(this.tmplFn());
+    },
 
     subscribe: function() {}
 
