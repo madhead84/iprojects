@@ -16,12 +16,11 @@
     <div class="edit-form-container"></div>
 
     <template id="whores-template">
-        <div class="whores">
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-        </div>
+        <ul>
+            {{~it :value:index}}
+            <li>{{=value.firstName }} {{=value.age}}, {{=value.price}} <span style="display: none">{{=value.id}}</span></li>
+            {{~}}
+        </ul>
     </template>
 
     <template id="add-form-template">

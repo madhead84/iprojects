@@ -260,9 +260,7 @@ var loadTemplate = function(navLinks) {
 };
 
 document.querySelector('.btn-nav-en').addEventListener('click', function () {
-    document.querySelector('.nav').innerHTML = loadTemplate({
-        links: navLinksEn
-    });
+    document.querySelector('.nav').innerHTML = loadTemplate({links: navLinksEn});
 });
 
 document.querySelector('.btn-nav-ro').addEventListener('click', function () {
