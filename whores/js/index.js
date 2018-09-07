@@ -67,11 +67,11 @@ var editFormView = {
         this.render();
     },
     render: function() {
-        $('.add-form-container').html(this.tmplFn());
+        $('.edit-form-container').html(this.tmplFn());
         this.subscribe();
     },
     subscribe: function() {
-        $('.add').on('click', function() {
+        $('.edit').on('click', function() {
             whoresCollection.add(this.getFormData());
             listView.init();
         }.bind(this));
@@ -82,8 +82,9 @@ var editFormView = {
             lastName: $('.add-form .last-name').val(),
             age: $('.add-form .age').val(),
             price: $('.add-form .price').val(),
-            id: this.getUniqID()
         };
     },
 
 };
+
+editFormView.init();
