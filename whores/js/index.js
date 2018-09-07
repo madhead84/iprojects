@@ -57,10 +57,9 @@ var addFormView = {
     getUniqID: function() {
         return '_' + Math.random().toString(36).substr(2, 9);
     }
-
 };
-
 addFormView.init();
+
 var editFormView = {
     tmplFn: doT.template($('#edit-form-template').html()),
     init: function() {
