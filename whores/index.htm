@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/doT.min.js"></script>
+    <script src="js/underscore.js"></script>
 </head>
 
 <body>
@@ -16,30 +17,40 @@
     <div class="edit-form-container"></div>
 
     <template id="whores-template">
-        <ul>
-            {{~it :value:index}}
-            <li>{{=value.firstName }} {{=value.age}}, {{=value.price}} <span style="display: none">{{=value.id}}</span></li>
-            {{~}}
-        </ul>
+        {{? it.length}}
+            <ul>
+                {{~it :value:index}}
+                <li class="whore" data-id={{=value.id}}>{{=value.firstName }} {{=value.age}}, ${{=value.price}}</li>
+                {{~}}
+            </ul>
+        {{??}}
+            No whores yet!
+        {{?}}
     </template>
 
     <template id="add-form-template">
         <div class="add-form">
-            <input class="first-name">
-            <input class="last-name">
-            <input class="age">
-            <input class="price">
-            <button type="button" class="add">Add</button>
+            <div class="field"><input class="first-name"></div>
+            <div class="field"><input class="last-name"></div>
+            <div class="field"><input class="age"></div>
+            <div class="field"><input class="price"></div>
+            <div class="actions">
+                <button type="button" class="btn add">Add</button>
+            </div>
         </div>
     </template>
 
     <template id="edit-form-template">
         <div class="edit-form">
-            <input class="first-name">
-            <input class="last-name">
-            <input class="age">
-            <input class="price">
-            <button type="button" class="edit">Edit</button>
+            <input type="hidden" name="id" value="{{= it.id}}">
+            <div class="field"><input value="{{=it.firstName}}" class="first-name"></div>
+            <div class="field"><input value="{{=it.lastName}}" class="last-name"></div>
+            <div class="field"><input value="{{=it.age}}" class="age"></div>
+            <div class="field"><input value="{{=it.price}}" class="price"></div>
+            <div class="actions">
+                <button type="button" class="btn save">Save</button>
+                <button type="button" class="btn delete">Delete</button>
+            </div>
         </div>
     </template>
 
