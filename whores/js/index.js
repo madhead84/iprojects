@@ -29,14 +29,8 @@ var whoresCollection = {
         localStorage.setItem('whores', JSON.stringify(this.attributes));
     },
 
-    showMore500: function () {
-        var result = [];
-        for (var i = 0; i < this.attributes.length; i++) {
-            if (this.attributes[i].price >= 500) {
-                result[result.length] = this.attributes[i];
-            }
-        }
-        return result;
+    getVIPWhores: function () {
+        return _.filter(this.attributes, function(whore){ return whore.price >= 500; });
     }
 };
 
@@ -47,6 +41,7 @@ var listView = {
 
     render: function() {
         $('.whores-container').html(this.tmplFn(whoresCollection.attributes));
+        this.subscribe();
     },
 
     subscribe: function() {

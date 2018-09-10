@@ -18,6 +18,7 @@
 
     <template id="whores-template">
         {{? it.length}}
+        <input type="checkbox">
             <ul>
                 {{~it :value:index}}
                 <li class="whore" data-id={{=value.id}}>{{=value.firstName }} {{=value.age}}, ${{=value.price}}</li>
