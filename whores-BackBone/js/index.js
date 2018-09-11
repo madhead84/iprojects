@@ -1,70 +1,99 @@
-var whoresCollection = {
-    init: function() {
-        this.attributes = JSON.parse(localStorage.getItem('whores')) || [];
+var WhoresCollection = Backbone.Collection.extend({
+    initialize: function() {
+        this.add(JSON.parse(localStorage.getItem('whores')));
+        this.on('update', this.updateStorage.bind(this));
     },
 
-    add: function(item) {
-        this.attributes.push(item);
-        this.updateStorage();
-    },
-
-    attributes: [],
-
-    getWhoreByID: function(id) {
-        return _.findWhere(this.attributes, {id: id});
-    },
-
-    removeWhoreByID: function(id) {
-        this.attributes = _.without(this.attributes, this.attributes[_.findIndex(this.attributes, {id: id})]);
-        this.updateStorage();
-    },
-
-    updateWhore: function (whore) {
-        whoreIndex = _.findIndex(this.attributes, {id: whore.id});
-        this.attributes[whoreIndex] = whore;
-        this.updateStorage();
-    },
+    // add: function() {
+    //     Backbone.Collection.prototype.add.apply(this, arguments);
+    //     this.updateStorage();
+    // },
+    //
+    // remove: function() {
+    //     Backbone.Collection.prototype.remove.apply(this, arguments);
+    //     this.updateStorage();
+    // },
+    //
+    // set: function() {
+    //     Backbone.Collection.prototype.set.apply(this, arguments);
+    //     this.updateStorage();
+    // },
 
     updateStorage: function() {
-        localStorage.setItem('whores', JSON.stringify(this.attributes));
+        localStorage.setItem('whores', JSON.stringify(this.toJSON()));
     },
 
     getVIPWhores: function () {
-        return _.filter(this.attributes, function(whore){ return whore.price >= 500; });
+        return this.filter(function(whore){
+            return whore.get('price') >= 500;
+        });
     }
-};
+});
 
-whoresCollection.init();
+var whoresCollection = new WhoresCollection();
 
-var listView = {
-    isVIPCheckboxChecked: false,
+var ListView = Backbone.View.extend({
 
-    tmplFn: doT.template($('#whores-template').html()),
-
-    render: function() {
-        var whores = this.isVIPCheckboxChecked ? whoresCollection.getVIPWhores() : whoresCollection.attributes;
-        $('.whores-container').html(this.tmplFn({
-            isVIPCheckboxChecked: this.isVIPCheckboxChecked,
-            whores: whores
-        }));
-        this.subscribe();
+    initialize: function() {
+        this.render();
+        $('.whores-container').html(this.$el);
     },
 
-    subscribe: function() {
-        $('.whore').on('click', function(event) {
-            var id =  $(event.currentTarget).attr('data-id');
-            editFormView.render(whoresCollection.getWhoreByID(id));
-            addFormView.remove();
-        });
+    isVIPCheckboxChecked: false,
 
-        $('.vip-checkbox').on('click', function() {
-            this.isVIPCheckboxChecked = $('.vip-checkbox').prop('checked');
-            this.render();
-        }.bind(this));
-    }
-};
+    templateFn: doT.template($('#whores-template').html()),
 
-listView.render();
+    events: {
+        'click .whore': 'handleClickByWhore',
+        'click .vip-checkbox': 'handleClickByVIPCheckbox'
+    },
+
+    render: function() {
+        var whores = this.isVIPCheckboxChecked ? new Backbone.Collection(whoresCollection.getVIPWhores()) : whoresCollection;
+
+        this.$el.html(this.templateFn({
+            isVIPCheckboxChecked: this.isVIPCheckboxChecked,
+            whores: whores.toJSON()
+        }));
+    },
+
+    handleClickByWhore: function(event) {
+        var id =  $(event.currentTarget).attr('data-id');
+        console.log(whoresCollection.get(id).toJSON());
+        // editFormView.render();
+        // addFormView.remove();
+    },
+
+    handleClickByVIPCheckbox: function() {
+        this.isVIPCheckboxChecked = this.$('.vip-checkbox').prop('checked');
+        this.render();
+    },
+});
+
+var listView = new ListView();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var addFormView = {
     tmplFn: doT.template($('#add-form-template').html()),
@@ -108,7 +137,7 @@ var addFormView = {
     }
 };
 
-addFormView.render();
+//addFormView.render();
 
 var editFormView = {
     tmplFn: doT.template($('#edit-form-template').html()),
