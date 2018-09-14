@@ -27,6 +27,15 @@ var WhoresCollection = Backbone.Collection.extend({
         return this.filter(function(whore){
             return whore.get('price') >= 500;
         });
+    },
+
+    getWhoreByID: function(id) {
+        return _.findWhere(this.attributes, {id: id});
+    },
+
+    removeWhoreByID: function(id) {
+        this.attributes = _.without(this.attributes, this.attributes[_.findIndex(this.attributes, {id: id})]);
+        this.updateStorage();
     }
 });
 
@@ -59,9 +68,10 @@ var ListView = Backbone.View.extend({
 
     handleClickByWhore: function(event) {
         var id =  $(event.currentTarget).attr('data-id');
-        console.log(whoresCollection.get(id).toJSON());
-        // editFormView.render();
-        // addFormView.remove();
+
+
+        editFormView.render(whoresCollection.get(id).toJSON());
+        addFormView.remove();
     },
 
     handleClickByVIPCheckbox: function() {
@@ -73,54 +83,28 @@ var ListView = Backbone.View.extend({
 var listView = new ListView();
 
 
+var AddFormView = Backbone.View.extend({
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var addFormView = {
-    tmplFn: doT.template($('#add-form-template').html()),
-
-    render: function() {
-        $('.add-form-container').html(this.tmplFn());
-        this.subscribe();
+    initialize: function() {
+        this.render();
+        $('.add-form-container').html(this.$el);
     },
 
-    subscribe: function() {
-        $('.add').on('click', function() {
-            whoresCollection.add(this.getFormData());
-            listView.render();
-            this.resetForm();
-        }.bind(this));
+    templateFn: doT.template($('#add-form-template').html()),
+
+    events: {
+        'click .add': 'addWhoreToList',
     },
 
-    resetForm: function() {
-        $('.add-form .first-name').val('');
-        $('.add-form .last-name').val('');
-        $('.add-form .age').val('');
-        $('.add-form .price').val('');
+    addWhoreToList: function () {
+        whoresCollection.add(this.getFormData());
+        listView.render();
+        this.resetForm();
     },
 
-    remove: function() {
-        $('.add-form-container').html('');
-    },
+    render: function () {
+        this.$el.html(this.templateFn());
+     },
 
     getFormData: function() {
         return {
@@ -134,10 +118,63 @@ var addFormView = {
 
     getUniqID: function() {
         return '_' + Math.random().toString(36).substr(2, 9);
-    }
-};
+    },
 
-//addFormView.render();
+    resetForm: function() {
+        $('.add-form .first-name').val('');
+        $('.add-form .last-name').val('');
+        $('.add-form .age').val('');
+        $('.add-form .price').val('');
+    },
+
+    remove: function() {
+        $('.add-form-container').html('');
+    },
+});
+
+var addFormView = new AddFormView();
+
+
+var EditFormView = Backbone.View.extend({
+    templateFn: doT.template($('#edit-form-template').html()),
+
+    render: function(whore) {
+
+        this.$el.html(this.templateFn(whore));
+    },
+
+    events: {
+        'click .save': 'updateWhore',
+        'click .delete': 'removeWhoreByID',
+    },
+
+    removeWhoreByID: function () {
+        var whoreId = $('.edit-form [name="id"]').val();
+        whoresCollection.updateStorage(whoreID);
+    },
+
+    updateWhore: function () {
+        whoresCollection.updateWhore(this.getFormData());
+    },
+
+    getFormData: function() {
+        return {
+            id: $('[name="id"]').val(),
+            firstName: $('.edit-form .first-name').val(),
+            lastName: $('.edit-form .last-name').val(),
+            age: $('.edit-form .age').val(),
+            price: $('.edit-form .price').val(),
+        };
+    }
+
+});
+
+var editFormView = new EditFormView();
+
+
+
+
+/*
 
 var editFormView = {
     tmplFn: doT.template($('#edit-form-template').html()),
@@ -178,4 +215,4 @@ var editFormView = {
         };
     }
 
-};
+};*/

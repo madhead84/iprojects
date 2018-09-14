@@ -148,5 +148,4 @@ var editFormView = {
             price: $('.edit-form .price').val(),
         };
     }
-
 };
