@@ -4,19 +4,9 @@ var WhoresCollection = Backbone.Collection.extend({
         this.on('update', this.updateStorage.bind(this));
     },
 
-    // add: function() {
-    //     Backbone.Collection.prototype.add.apply(this, arguments);
-    //     this.updateStorage();
-    // },
-    //
-    // remove: function() {
-    //     Backbone.Collection.prototype.remove.apply(this, arguments);
-    //     this.updateStorage();
-    // },
-    //
-    // set: function() {
-    //     Backbone.Collection.prototype.set.apply(this, arguments);
-    //     this.updateStorage();
+    // xxx: function() {
+    //     Backbone.Collection.prototype.xxx.apply(this, arguments);
+    //     // your code
     // },
 
     updateStorage: function() {
@@ -27,15 +17,6 @@ var WhoresCollection = Backbone.Collection.extend({
         return this.filter(function(whore){
             return whore.get('price') >= 500;
         });
-    },
-
-    getWhoreByID: function(id) {
-        return _.findWhere(this.attributes, {id: id});
-    },
-
-    removeWhoreByID: function(id) {
-        this.attributes = _.without(this.attributes, this.attributes[_.findIndex(this.attributes, {id: id})]);
-        this.updateStorage();
     }
 });
 
@@ -44,8 +25,9 @@ var whoresCollection = new WhoresCollection();
 var ListView = Backbone.View.extend({
 
     initialize: function() {
-        this.render();
         $('.whores-container').html(this.$el);
+        this.render();
+        this.listenTo(whoresCollection, 'update', this.render.bind(this));
     },
 
     isVIPCheckboxChecked: false,
@@ -67,11 +49,9 @@ var ListView = Backbone.View.extend({
     },
 
     handleClickByWhore: function(event) {
-        var id =  $(event.currentTarget).attr('data-id');
-
-
-        editFormView.render(whoresCollection.get(id).toJSON());
-        addFormView.remove();
+        var whoreID =  $(event.currentTarget).attr('data-id');
+        editFormView.render(whoresCollection.get(whoreID).toJSON());
+        addFormView.$el.html('');
     },
 
     handleClickByVIPCheckbox: function() {
@@ -82,12 +62,11 @@ var ListView = Backbone.View.extend({
 
 var listView = new ListView();
 
-
 var AddFormView = Backbone.View.extend({
 
     initialize: function() {
-        this.render();
         $('.add-form-container').html(this.$el);
+        this.render();
     },
 
     templateFn: doT.template($('#add-form-template').html()),
@@ -98,13 +77,12 @@ var AddFormView = Backbone.View.extend({
 
     addWhoreToList: function () {
         whoresCollection.add(this.getFormData());
-        listView.render();
         this.resetForm();
     },
 
     render: function () {
         this.$el.html(this.templateFn());
-     },
+    },
 
     getFormData: function() {
         return {
@@ -125,36 +103,41 @@ var AddFormView = Backbone.View.extend({
         $('.add-form .last-name').val('');
         $('.add-form .age').val('');
         $('.add-form .price').val('');
-    },
-
-    remove: function() {
-        $('.add-form-container').html('');
-    },
+    }
 });
 
 var addFormView = new AddFormView();
 
-
 var EditFormView = Backbone.View.extend({
+
     templateFn: doT.template($('#edit-form-template').html()),
 
-    render: function(whore) {
+    initialize: function() {
+        $('.edit-form-container').html(this.$el);
+    },
 
+    render: function(whore) {
         this.$el.html(this.templateFn(whore));
     },
 
     events: {
         'click .save': 'updateWhore',
-        'click .delete': 'removeWhoreByID',
+        'click .delete': 'removeWhore',
     },
 
-    removeWhoreByID: function () {
-        var whoreId = $('.edit-form [name="id"]').val();
-        whoresCollection.updateStorage(whoreID);
+    removeWhore: function () {
+        var whoreID = $('.edit-form [name="id"]').val();
+        whoresCollection.remove(whoreID);
+        editFormView.$el.html('');
+        addFormView.render();
     },
 
     updateWhore: function () {
-        whoresCollection.updateWhore(this.getFormData());
+        whoresCollection.add(this.getFormData(), {
+            merge: true
+        });
+        editFormView.$el.html('');
+        addFormView.render();
     },
 
     getFormData: function() {
@@ -166,53 +149,6 @@ var EditFormView = Backbone.View.extend({
             price: $('.edit-form .price').val(),
         };
     }
-
 });
 
 var editFormView = new EditFormView();
-
-
-
-
-/*
-
-var editFormView = {
-    tmplFn: doT.template($('#edit-form-template').html()),
-
-    render: function(whore) {
-        $('.edit-form-container').html(this.tmplFn(whore));
-        this.subscribe();
-    },
-
-    subscribe: function() {
-        $('.save').on('click', function() {
-            whoresCollection.updateWhore(this.getFormData());
-            this.remove();
-            listView.render();
-            addFormView.render();
-        }.bind(this));
-
-        $('.delete').on('click', function () {
-            var whoreId = $('.edit-form [name="id"]').val();
-            whoresCollection.removeWhoreByID(whoreId);
-            listView.render();
-            this.remove();
-            addFormView.render();
-        }.bind(this));
-    },
-
-    remove: function() {
-        $('.edit-form-container').html('');
-    },
-
-    getFormData: function() {
-        return {
-            id: $('[name="id"]').val(),
-            firstName: $('.edit-form .first-name').val(),
-            lastName: $('.edit-form .last-name').val(),
-            age: $('.edit-form .age').val(),
-            price: $('.edit-form .price').val(),
-        };
-    }
-
-};*/
