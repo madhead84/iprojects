@@ -423,3 +423,10 @@ var random = function(min, max) {
     }
     return Math.round(Math.random() * (max - min) + min);
 };
+
+function closure() {
+    var i = 0;
+    return function() {
+        return i++;
+    };
+};
