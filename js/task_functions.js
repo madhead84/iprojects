@@ -214,6 +214,15 @@ var isEmpty = function(collection) {
     return true;
 };
 
+var contains = function(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return true;
+        }
+    }
+    return false;
+};
+
 //22222222222222222222222222222222222
 var uniq = function(array) {
     var returnedArray = [];
@@ -226,6 +235,32 @@ var uniq = function(array) {
         }
     return returnedArray;
 };
+
+var uniq = function(array) {
+    var returnedArray = []
+        for (var j = 0; j < array.length; j++) {
+                if (contains(returnedArray, array[j])  === false) {
+				returnedArray[returnedArray.length] = array[j];
+				}
+				
+            }
+    
+    return returnedArray;
+};
+
+var uniq = function (array)  {
+	var arrayObject = {};
+	var result = [];
+	
+	for (var i = 0; i < array.length; i++) {
+	    arrayObject[array[i]] = 0;
+	}
+	
+    for (var key in arrayObject) {
+        result[result.length] = Number(key);
+    }
+    return result;
+}
 
 //22222222222222222222222222222222222222222222222
 var sort = function(array) {
