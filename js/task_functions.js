@@ -260,7 +260,12 @@ var uniq = function (array)  {
         result[result.length] = arrayObject[key];
     }
     return result;
-}
+};
+
+const uniq = function(array) {
+	mySet = new Set(array);
+	return [...mySet]
+};
 
 //22222222222222222222222222222222222222222222222
 var sort = function(array) {
