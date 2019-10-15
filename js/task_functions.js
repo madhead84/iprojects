@@ -263,8 +263,8 @@ var uniq = function (array)  {
 };
 
 const uniq = function(array) {
-return [...new Set(array)]
-}
+    return [...new Set(array)];
+};
 
 //22222222222222222222222222222222222222222222222
 var sort = function(array) {
