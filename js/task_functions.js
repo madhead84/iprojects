@@ -253,11 +253,11 @@ var uniq = function (array)  {
 	var result = [];
 	
 	for (var i = 0; i < array.length; i++) {
-	    arrayObject[array[i]] = 0;
+	arrayObject[array[i]] = array[i];
 	}
 	
     for (var key in arrayObject) {
-        result[result.length] = Number(key);
+        result[result.length] = arrayObject[key];
     }
     return result;
 }
