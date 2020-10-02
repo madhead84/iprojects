@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+	<ol>From GBP</ol>
+	<input type="text" id="amount" placeholder="Input amount"/>
+	<input type="text" id="rate" placeholder="Input rate"/>
+	<input type="button" id="btn" value="Calculate"/>
+	<input type="button" id="clear" value="Claer All"/>
+	<ol id="list">
+	</ol>
+	
+	<script>
+	clear.onclick = function(){
+	document.getElementById("list").innerHTML="";	
+	}
+	</script>
+	
+	<script>
+	btn.onclick =  function(){
+	var amount = document.getElementById("amount").value;
+	var rate = document.getElementById("rate").value;
+	var result = rate > 1 ? amount * rate : amount/rate;
+	var newLi = document.createElement('li');
+	newLi.innerHTML = "Amount: " + amount + " Rate: " + rate + " Result: " + result;
+    list.appendChild(newLi);
+	}
+  </script>
+  
+  	<ol>To GBP</ol>
+	<input type="text" id="amountRev" placeholder="Input amount"/>
+	<input type="text" id="rateRev" placeholder="Input rate"/>
+	<input type="button" id="btnRev" value="Calculate"/>
+	<input type="button" id="clearRev" value="Claer All"/>
+	<ol id=listRev>
+	</ol>
+	
+	<script>
+	clearRev.onclick = function(){
+	document.getElementById("listRev").innerHTML="";	
+	}
+	</script>
+	
+	<script>
+	btnRev.onclick =  function(){
+	var amountRev = document.getElementById("amountRev").value;
+	var rateRev = document.getElementById("rateRev").value;
+	var resultRev = rateRev > 1 ? amountRev/rateRev : amountRev * rateRev;
+	var newLi = document.createElement('li');
+	newLi.innerHTML = "Amount: " + amountRev + " Rate: " + rateRev + " Result: " + resultRev;
+    listRev.appendChild(newLi);
+	}
+  </script>
+
+</body>
+
+</html>
