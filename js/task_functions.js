@@ -432,3 +432,8 @@ function closure() {
         return i++;
     };
 };
+
+function search (ittems, term) {
+    return ittems.filter(function(ittems) { 
+        return ittems.indexOf(term) > -1}
+        )};
